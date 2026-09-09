@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message | Learning Management System</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages/message.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+   <!-- Sidebar toggle (mobile) -->
+<input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox">
+
+<!-- ==========================================================
+     HEADER
+     Contains the application branding and administrator profile
+=========================================================== -->
+<header>
+
+    <!-- Sidebar toggle (mobile) -->
+    <label for="sidebar-toggle" class="sidebar-toggle-label" aria-label="Toggle navigation menu">
+        <i class='bx bx-menu'></i>
+    </label>
+
+    <!-- Application logo and title (Boxicons) -->
+    <a href="/index.html" class="site-logo">
+        <i class='bx bx-book-reader'></i>
+        <h1>Learning Management System</h1>
+    </a>
+
+    <!-- Administrator profile area (real image) -->
+    <section aria-label="Administrator Profile">
+        <img src="../images/1.jpeg" alt="Administrator profile picture">
+        <p>Administrator</p>
+    </section>
+
+</header>
+
+    <!-- ==========================================================
+         SIDEBAR NAVIGATION
+         Main navigation menu for the admin dashboard
+    =========================================================== -->
+    <aside>
+         <nav aria-label="Main Navigation">
+    <h2>Navigation</h2>
+    <ul>
+        <li><a href="/index.html"><i class='bx bx-grid-alt'></i>Dashboard</a></li>
+        <li><a href="/pages/student.html"><i class='bx bx-user'></i>Students</a></li>
+        <li><a href="/pages/course.html"><i class='bx bx-book'></i>Courses</a></li>
+        <li><a href="/pages/instructor.html"><i class='bx bx-chalkboard'></i>Instructors</a></li>
+        <li><a href="/pages/assignment.html"><i class='bx bx-clipboard'></i>Assignments</a></li>
+        <li><a href="/pages/exam.html"><i class='bx bx-file'></i>Exams</a></li>
+        <li><a href="/pages/certificate.html"><i class='bx bx-certification'></i>Certificates</a></li>
+        <li><a href="/pages/message.html"class="active"><i class='bx bx-envelope'></i>Messages</a></li>
+        <li><a href="/pages/report.html"><i class='bx bx-bar-chart-alt-2'></i>Reports</a></li>
+        <li><a href="/pages/settings.html"><i class='bx bx-cog'></i>Settings</a></li>
+    </ul>
+        </nav>
+    </aside>
+   <main>
+    <section aria-label="Messages">
+
+        <h1>Messages</h1>
+        <p>Internal communication.</p>
+
+        <search aria-label="Search Messages">
+            <label for="message-search-input">Search messages</label>
+            <input type="search" id="message-search-input" name="message-search" placeholder="Search messages...">
+        </search>
+            <section aria-label="Messages Inbox">
+
+    <!-- ======================================================
+         CONVERSATION LIST (left pane)
+    ====================================================== -->
+    <section aria-label="Conversation List">
+
+        <h2>Inbox</h2>
+
+        <ul>
+<li aria-current="true">
+    <span aria-hidden="true">SM</span>
+    <p>Dr. Sarah Mitchell</p>
+    <p>Introduction to Web Development</p>
+    <p>Don't forget about the upcoming...</p>
+    <time datetime="2026-08-20T09:30">9:30 AM</time>
+    <p>2</p>
+</li>
+
+<li>
+    <span aria-hidden="true">EC</span>
+    <p>Prof. Emeka Chukwu</p>
+    <p>Principles of Marketing</p>
+    <p>The assignment deadline has been...</p>
+    <time datetime="2026-08-20T08:15">8:15 AM</time>
+</li>
+
+<li>
+    <span aria-hidden="true">MT</span>
+    <p>Dr. Michael Tan</p>
+    <p>Calculus II</p>
+    <p>Your examination timetable is available...</p>
+    <time datetime="2026-08-19">Yesterday</time>
+    <p>1</p>
+</li>
+
+<li>
+    <span aria-hidden="true">GU</span>
+    <p>Prof. Grace Umeh</p>
+    <p>Introduction to Sociology</p>
+    <p>Please review the course materials...</p>
+    <time datetime="2026-08-19">Yesterday</time>
+</li>
+
+        </ul>
+
+    </section>
+
+            <!-- ======================================================
+                ACTIVE THREAD (right pane)
+            ====================================================== -->
+                <section aria-label="Active Conversation">
+            <!-- Selected conversation header -->
+            <section aria-label="Selected Conversation">
+                <span aria-hidden="true">SM</span>
+                <p>Dr. Sarah Mitchell</p>
+                <p>Introduction to Web Development</p>
+                <button type="button" aria-label="Star conversation">&#9733;</button>
+                <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="More options">&#8942;</button>
+            </section>
+
+        <!-- Message thread -->
+        <section aria-label="Message">
+            <article>
+                <span aria-hidden="true">SM</span>
+                    <p>Dr. Sarah Mitchell</p>
+                    <time datetime="2026-08-20T09:30">August 20, 2026 at 9:30 AM</time>
+                    <p>Don't forget about the upcoming we development assignment. Please make sure your portfolio page is submitted before the deadline.</p>
+            </article>
+         </section>
+
+        <!-- Reply form -->
+        <form aria-label="Reply">
+            <h3>Reply</h3>
+            <label for="reply-message">Write a message</label>
+            <textarea id="reply-message" name="reply-message" placeholder="Write a message..."></textarea>
+            <button type="button" aria-label="Attach file">&#128206;</button>
+            <button type="button" aria-label="Insert emoji">&#128578;</button>
+            <button type="submit">Send</button>
+        </form>
+
+    </section>
+
+</section>
+    
+</main>
+
+
+    <!-- ==========================================================
+         FOOTER
+    =========================================================== -->
+    <footer>
+ 
+        <!-- Copyright -->
+        <section aria-label="Copyright">
+            <p>&copy; 2026 University Learning Management System. All rights reserved.</p>
+            <a href="accessibility.html">Accessibility Statement</a>
+        </section>
+ 
+        <!-- Quick Links -->
+        <nav aria-label="Quick Links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="reports.html">Reports</a></li>
+            </ul>
+        </nav>
+ 
+        <!-- Contact Information -->
+        <address aria-label="Contact Information">
+    <h2>Contact Information</h2>
+    <p><a href="mailto:support@example.com">support@example.com</a></p>
+    <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+    <div class="social-icons">
+        <img src="images/facebook-icon.png" alt="Facebook">
+        <img src="images/linkedin-icon.png" alt="LinkedIn">
+        <img src="images/youtube-icon.png" alt="YouTube">
+    </div>
+</address>
+ 
+        <!-- Version Information -->
+        <section aria-label="Version Information">
+            <p>Version 1.0.0</p>
+            <p>Last updated: August 12, 2026</p>
+        </section>
+ 
+    </footer>
+</body>
+</html>

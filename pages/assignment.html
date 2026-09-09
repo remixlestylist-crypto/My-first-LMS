@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment | Learning Management System</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/pages/assignment.css">
+     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    
+</head>
+<body>
+     <!-- Sidebar toggle (mobile) -->
+<input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox">
+
+<!-- ==========================================================
+     HEADER
+     Contains the application branding and administrator profile
+=========================================================== -->
+<header>
+
+    <!-- Sidebar toggle (mobile) -->
+    <label for="sidebar-toggle" class="sidebar-toggle-label" aria-label="Toggle navigation menu">
+        <i class='bx bx-menu'></i>
+    </label>
+
+    <!-- Application logo and title (Boxicons) -->
+    <a href="/index.html" class="site-logo">
+        <i class='bx bx-book-reader'></i>
+        <h1>Learning Management System</h1>
+    </a>
+
+    <!-- Administrator profile area (real image) -->
+    <section aria-label="Administrator Profile">
+        <img src="../images/1.jpeg" alt="Administrator profile picture">
+        <p>Administrator</p>
+    </section>
+
+</header>
+</header>
+    <!-- ==========================================================
+         SIDEBAR NAVIGATION
+         Shared with the Dashboard page - Students is now active
+    =========================================================== -->
+    <aside>
+           <nav aria-label="Main Navigation">
+    <h2>Navigation</h2>
+    <ul>
+        <li><a href="/index.html"><i class='bx bx-grid-alt'></i>Dashboard</a></li>
+        <li><a href="/pages/student.html"><i class='bx bx-user'></i>Students</a></li>
+        <li><a href="/pages/course.html"><i class='bx bx-book'></i>Courses</a></li>
+        <li><a href="/pages/instructor.html"><i class='bx bx-chalkboard'></i>Instructors</a></li>
+        <li><a href="/pages/assignment.html"class="active"><i class='bx bx-clipboard'></i>Assignments</a></li>
+        <li><a href="/pages/exam.html"><i class='bx bx-file'></i>Exams</a></li>
+        <li><a href="/pages/certificate.html"><i class='bx bx-certification'></i>Certificates</a></li>
+        <li><a href="/pages/message.html"><i class='bx bx-envelope'></i>Messages</a></li>
+        <li><a href="/pages/report.html"><i class='bx bx-bar-chart-alt-2'></i>Reports</a></li>
+        <li><a href="/pages/settings.html"><i class='bx bx-cog'></i>Settings</a></li>
+    </ul>
+        </nav>
+    </aside>
+<main>
+
+    <section aria-label="Assignments">
+
+        <h1>Assignments</h1>
+        <p>Manage assignments.</p>
+
+        <section aria-label="Assignment Table">
+
+            <h2>Assignment Table</h2>
+
+            <table>
+                <caption>All Course Assignments</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Course</th>
+                        <th scope="col">Assignment</th>
+                        <th scope="col">Lecturer</th>
+                        <th scope="col">Due Date</th>
+                        <th scope="col">Submission Status</th>
+                        <th scope="col">Progress</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="images/course-web-development.png" alt="Thumbnail for Introduction to Web Development course">
+                            Introduction to Web Development
+                        </td>
+                        <td>Build a Responsive Portfolio Page</td>
+                        <td>Dr. Sarah Mitchell</td>
+                        <td><time datetime="2026-08-20">Aug 20, 2026</time></td>
+                        <td><mark>Submitted</mark></td>
+                        <td><progress value="100" max="100">100%</progress></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/course-marketing.png" alt="Thumbnail for Principles of Marketing course">
+                            Principles of Marketing
+                        </td>
+                        <td>Market Research Case Study</td>
+                        <td>Prof. Emeka Chukwu</td>
+                        <td><time datetime="2026-08-22">Aug 22, 2026</time></td>
+                        <td><mark>Pending</mark></td>
+                        <td><progress value="0" max="100">0%</progress></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/course-organic-chemistry.png" alt="Thumbnail for Organic Chemistry I course">
+                            Organic Chemistry I
+                        </td>
+                        <td>Lab Report: Alkane Reactions</td>
+                        <td>Dr. Amara Nwosu</td>
+                        <td><time datetime="2026-08-18">Aug 18, 2026</time></td>
+                        <td><mark>Late</mark></td>
+                        <td><progress value="75" max="100">75%</progress></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/course-calculus.png" alt="Thumbnail for Calculus II course">
+                            Calculus II
+                        </td>
+                        <td>Problem Set 6: Integration Techniques</td>
+                        <td>Dr. Michael Tan</td>
+                        <td><time datetime="2026-08-25">Aug 25, 2026</time></td>
+                        <td><mark>In Progress</mark></td>
+                        <td><progress value="40" max="100">40%</progress></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/course-sociology.png" alt="Thumbnail for Introduction to Sociology course">
+                            Introduction to Sociology
+                        </td>
+                        <td>Reflection Essay: Social Institutions</td>
+                        <td>Prof. Grace Umeh</td>
+                        <td><time datetime="2026-08-19">Aug 19, 2026</time></td>
+                        <td><mark>Submitted</mark></td>
+                        <td><progress value="100" max="100">100%</progress></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/course-cloud-computing.png" alt="Thumbnail for Cloud Computing Essentials course">
+                            Cloud Computing Essentials
+                        </td>
+                        <td>Deploy a Virtual Machine Instance</td>
+                        <td>Dr. Tunde Bakare</td>
+                        <td><time datetime="2026-08-28">Aug 28, 2026</time></td>
+                        <td><mark>Not Started</mark></td>
+                        <td><progress value="0" max="100">0%</progress></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/course-academic-writing.png" alt="Thumbnail for Academic Writing course">
+                            Academic Writing
+                        </td>
+                        <td>Argumentative Essay Draft</td>
+                        <td>Dr. Ifeoma Nwachukwu</td>
+                        <td><time datetime="2026-08-21">Aug 21, 2026</time></td>
+                        <td><mark>In Progress</mark></td>
+                        <td><progress value="60" max="100">60%</progress></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/course-database-design.png" alt="Thumbnail for Database Design Fundamentals course">
+                            Database Design Fundamentals
+                        </td>
+                        <td>Design an ER Diagram for a Library System</td>
+                        <td>Prof. Ngozi Eze</td>
+                        <td><time datetime="2026-08-24">Aug 24, 2026</time></td>
+                        <td><mark>Pending</mark></td>
+                        <td><progress value="20" max="100">20%</progress></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="images/course-business-statistics.png" alt="Thumbnail for Business Statistics course">
+                            Business Statistics
+                        </td>
+                        <td>Hypothesis Testing Assignment</td>
+                        <td>Dr. Chinedu Okafor</td>
+                        <td><time datetime="2026-08-23">Aug 23, 2026</time></td>
+                        <td><mark>Late</mark></td>
+                        <td><progress value="50" max="100">50%</progress></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+    </section>
+
+</main>
+    <!-- ==========================================================
+         FOOTER
+         Shared with the Dashboard page
+    =========================================================== -->
+    <footer>
+
+        <!-- Copyright -->
+        <section aria-label="Copyright">
+            <p>&copy; 2026 University Learning Management System. All rights reserved.</p>
+            <a href="accessibility.html">Accessibility Statement</a>
+        </section>
+
+        <!-- Quick Links -->
+        <nav aria-label="Quick Links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="reports.html">Reports</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contact Information -->
+        <address aria-label="Contact Information">
+            <h2>Contact Information</h2>
+            <p><a href="mailto:support@example.com">support@example.com</a></p>
+            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+        </address>
+
+        <!-- Version Information -->
+        <section aria-label="Version Information">
+            <p>Version 1.0.0</p>
+            <p>Last updated: August 12, 2026</p>
+        </section>
+
+    </footer>
+</body>
+</html>

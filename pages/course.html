@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course | Learning Management System</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/pages/course.css">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+</head>
+<body>
+     <!-- Sidebar toggle (mobile) -->
+<input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox">
+
+<!-- ==========================================================
+     HEADER
+     Contains the application branding and administrator profile
+=========================================================== -->
+<header>
+
+    <!-- Sidebar toggle (mobile) -->
+    <label for="sidebar-toggle" class="sidebar-toggle-label" aria-label="Toggle navigation menu">
+        <i class='bx bx-menu'></i>
+    </label>
+
+    <!-- Application logo and title (Boxicons) -->
+    <a href="/index.html" class="site-logo">
+        <i class='bx bx-book-reader'></i>
+        <h1>Learning Management System</h1>
+    </a>
+
+    <!-- Administrator profile area (real image) -->
+    <section aria-label="Administrator Profile">
+        <img src="../images/1.jpeg" alt="Administrator profile picture">
+        <p>Administrator</p>
+    </section>
+
+</header>
+
+    <!-- ==========================================================
+         SIDEBAR NAVIGATION
+         Shared with the Dashboard page - Students is now active
+    =========================================================== -->
+    <aside>
+           <nav aria-label="Main Navigation">
+    <h2>Navigation</h2>
+    <ul>
+        <li><a href="/index.html"><i class='bx bx-grid-alt'></i>Dashboard</a></li>
+        <li><a href="/pages/student.html"><i class='bx bx-user'></i>Students</a></li>
+        <li><a href="/pages/course.html" class="active"><i class='bx bx-book'></i>Courses</a></li>
+        <li><a href="/pages/instructor.html"><i class='bx bx-chalkboard'></i>Instructors</a></li>
+        <li><a href="/pages/assignment.html"><i class='bx bx-clipboard'></i>Assignments</a></li>
+        <li><a href="/pages/exam.html"><i class='bx bx-file'></i>Exams</a></li>
+        <li><a href="/pages/certificate.html"><i class='bx bx-certification'></i>Certificates</a></li>
+        <li><a href="/pages/message.html"><i class='bx bx-envelope'></i>Messages</a></li>
+        <li><a href="/pages/report.html"><i class='bx bx-bar-chart-alt-2'></i>Reports</a></li>
+        <li><a href="/pages/settings.html"><i class='bx bx-cog'></i>Settings</a></li>
+    </ul>
+        </nav>
+    </aside>
+
+<main>
+
+<heading class="course-heading">
+    <h1><i class='bx bx-book-open'></i>Courses</h1>
+</heading>
+    <section aria-label="Search and Filter Courses">
+ 
+        <search>
+            <label for="course-search-input">Search courses</label>
+            <input type="search" id="course-search-input" name="course-search" placeholder="Search by course name or instructor">
+        </search>
+ 
+        <form aria-label="Filter Courses">
+            <label for="filter-category">Filter</label>
+            <select id="filter-category" name="category">
+                <option value="">All Courses</option>
+                <option value="computer-science">Computer Science</option>
+                <option value="business">Business</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="mathematics">Mathematics</option>
+                <option value="social-sciences">Social Sciences</option>
+                <option value="information-technology">Information Technology</option>
+                <option value="humanities">Humanities</option>
+            </select>
+        </form>
+ 
+    </section>
+
+    <h2>Available Courses</h2>
+
+    <section  aria-label="Popular Courses">
+
+        
+            <h3>Popular Courses</h3>
+
+            <nav aria-label="Popular Courses Navigation">
+                <button type="button" aria-label="Previous popular courses">
+                    ←
+                </button>
+
+                <button type="button" aria-label="Next popular courses">
+                    →
+                </button>
+
+                <a href="#">See All</a>
+            </nav>
+        
+
+        <article>
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Laptop%20with%20Wikipedia%20W%20illustration.svg"
+     alt="Thumbnail for Introduction to Web Development course">
+            <h3>Introduction to Web Development</h3>
+            <p>Instructor: Dr. Sarah Mitchell</p>
+            <p>Duration: 12 weeks</p>
+            <p>Enrolled: 342 students</p>
+        </article>
+
+        <article>
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/B2B%20Marketing%20Roles%20v2.png"
+     alt="Thumbnail for Principles of Marketing course">
+            <p><mark>Business</mark></p>
+            <h3>Principles of Marketing</h3>
+            <p>Instructor: Prof. Emeka Chukwu</p>
+            <p>Duration: 10 weeks</p>
+            <p>Enrolled: 218 students</p>
+        </article>
+
+        <article>
+            <img src="images/course-organic-chemistry.png" alt="Thumbnail for Organic Chemistry I course">
+            <p><mark>Chemistry</mark></p>
+            <h3>Organic Chemistry I</h3>
+            <p>Instructor: Dr. Amara Nwosu</p>
+            <p>Duration: 16 weeks</p>
+            <p>Enrolled: 156 students</p>
+        </article>
+
+        <article>
+            <img src="images/course-calculus.png" alt="Thumbnail for Calculus II course">
+            <p><mark>Mathematics</mark></p>
+            <h3>Calculus II</h3>
+            <p>Instructor: Dr. Michael Tan</p>
+            <p>Duration: 14 weeks</p>
+            <p>Enrolled: 289 students</p>
+        </article>
+
+        <article>
+            <img src="images/course-sociology.png" alt="Thumbnail for Introduction to Sociology course">
+            <p><mark>Social Sciences</mark></p>
+            <h3>Introduction to Sociology</h3>
+            <p>Instructor: Prof. Grace Umeh</p>
+            <p>Duration: 12 weeks</p>
+            <p>Enrolled: 174 students</p>
+        </article>
+
+        <article>
+            <img src="images/course-cloud-computing.png" alt="Thumbnail for Cloud Computing Essentials course">
+            <p><mark>Information Technology</mark></p>
+            <h3>Cloud Computing Essentials</h3>
+            <p>Instructor: Dr. Tunde Bakare</p>
+            <p>Duration: 8 weeks</p>
+            <p>Enrolled: 203 students</p>
+        </article>
+
+    </section>
+<section aria-label="Klic Courses">
+
+    <h3>Klic Courses</h3>
+
+    <nav aria-label="Klic Courses Navigation">
+
+        <a href="#klic-course-3" aria-label="Previous Klic courses">
+            ←
+        </a>
+
+        <a href="#klic-course-4" aria-label="Next Klic courses">
+            →
+        </a>
+
+        <a href="#">See All</a>
+
+    </nav>
+
+    <article id="klic-course-1">
+        <img src="images/course-academic-writing.png" alt="Thumbnail for Academic Writing course">
+        <p><mark>Humanities</mark></p>
+        <h3>Academic Writing</h3>
+        <p>Instructor: Dr. Ifeoma Nwachukwu</p>
+        <p>Duration: 8 weeks</p>
+        <p>Enrolled: 267 students</p>
+    </article>
+
+    <article id="klic-course-2">
+        <img src="images/course-database-design.png" alt="Thumbnail for Database Design Fundamentals course">
+        <p><mark>Computer Science</mark></p>
+        <h3>Database Design Fundamentals</h3>
+        <p>Instructor: Prof. Ngozi Eze</p>
+        <p>Duration: 10 weeks</p>
+        <p>Enrolled: 198 students</p>
+    </article>
+
+    <article id="klic-course-3">
+        <img src="images/course-business-statistics.png" alt="Thumbnail for Business Statistics course">
+        <p><mark>Business</mark></p>
+        <h3>Business Statistics</h3>
+        <p>Instructor: Dr. Chinedu Okafor</p>
+        <p>Duration: 12 weeks</p>
+        <p>Enrolled: 231 students</p>
+    </article>
+
+    <article id="klic-course-4">
+        <img src="images/course-psychology.png" alt="Thumbnail for Introduction to Psychology course">
+        <p><mark>Social Sciences</mark></p>
+        <h3>Introduction to Psychology</h3>
+        <p>Instructor: Prof. Fatima Bello</p>
+        <p>Duration: 14 weeks</p>
+        <p>Enrolled: 312 students</p>
+    </article>
+
+</section>
+
+    </section>
+
+
+</section>
+
+    </main>
+
+
+
+    <!-- ==========================================================
+         FOOTER
+         Shared with the Dashboard page
+    =========================================================== -->
+    <footer>
+
+        <!-- Copyright -->
+        <section aria-label="Copyright">
+            <p>&copy; 2026 University Learning Management System. All rights reserved.</p>
+            <a href="accessibility.html">Accessibility Statement</a>
+        </section>
+
+        <!-- Quick Links -->
+        <nav aria-label="Quick Links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="reports.html">Reports</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contact Information -->
+        <address aria-label="Contact Information">
+            <h2>Contact Information</h2>
+            <p><a href="mailto:support@example.com">support@example.com</a></p>
+            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+        </address>
+
+        <!-- Version Information -->
+        <section aria-label="Version Information">
+            <p>Version 1.0.0</p>
+            <p>Last updated: August 12, 2026</p>
+        </section>
+
+    </footer>
+</body>
+</html>

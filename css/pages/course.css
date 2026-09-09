@@ -1,0 +1,302 @@
+/* ==========================================================
+   COURSES PAGE STYLESHEET
+=========================================================== */
+
+/* Book icon next to the "Courses" heading */
+.course-heading h1 i {
+    color: #c4b5fd;
+}.course-heading {
+    display: flex;
+    align-items: center;
+
+    padding: 18px 24px;
+
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.course-heading h1 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.course-heading i {
+    font-size: 32px;
+    color: #3b82f6;
+}
+
+
+/* ==========================================================
+   SEARCH AND FILTER TOOLBAR
+   Search sits on the left, filter is pushed to the far right,
+   both aligned on the same row.
+=========================================================== */
+section[aria-label="Search and Filter Courses"] {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+
+    margin-top: 24px;
+    margin-bottom: 32px;
+
+    padding: 20px 24px;
+
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+section[aria-label="Search and Filter Courses"] search {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+section[aria-label="Search and Filter Courses"] label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+}
+
+section[aria-label="Search and Filter Courses"] input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px 16px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    background-color: #ffffff;
+    color: #1e293b;
+
+    font-size: 14px;
+    outline: none;
+}
+
+section[aria-label="Search and Filter Courses"] form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    min-width: 180px;
+}
+
+section[aria-label="Search and Filter Courses"] select {
+    padding: 12px 16px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    background-color: #ffffff;
+    color: #1e293b;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+ .h2 {
+    margin: 0;
+
+    font-size: 2px;
+    font-weight: 900;
+
+    color: #1e293b;
+
+    line-height: 1.2;
+}
+
+section[aria-label="Popular Courses"] {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+section[aria-label="Popular Courses"] > h3 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+
+    margin: 0;
+}
+
+section[aria-label="Popular Courses"] > nav {
+    grid-column: 3;
+    grid-row: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+section[aria-label="Popular Courses"] > article {
+    grid-column: auto;
+    grid-row: auto;
+
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+section[aria-label="Popular Courses"] > article > img {
+    width: 100%;
+    height: 150px;
+
+    display: block;
+
+    object-fit: cover;
+}
+section[aria-label="Popular Courses"] > article mark {
+    padding: 4px 8px;
+
+    border-radius: 6px;
+
+    background-color: #eff6ff;
+    color: #2563eb;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+section[aria-label="Popular Courses"] > article > h3 {
+    margin-top: 12px;
+    margin-bottom: 10px;
+    padding: 0 12px;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    color: #1e293b;
+}
+section[aria-label="Popular Courses"] > article > p {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding: 0 12px;
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: #64748b;
+}
+
+section[aria-label="Popular Courses"] > article {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section[aria-label="Popular Courses"] > article:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
+}
+section[aria-label="Klic Courses"] {
+    position: relative;
+
+    display: flex;
+    gap: 24px;
+
+    overflow-x: auto;
+
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-top: 50px;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+}
+section[aria-label="Klic Courses"] > h3 {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    margin: 0;
+
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+}
+section[aria-label="Klic Courses"] > nav {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+section[aria-label="Klic Courses"] > article {
+    flex: 0 0 calc((100% - 48px) / 3);
+
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+
+    scroll-snap-align: start;
+}
+section[aria-label="Klic Courses"] > article > img {
+    width: 100%;
+    height: 150px;
+
+    display: block;
+
+    object-fit: cover;
+}
+section[aria-label="Klic Courses"] > article mark {
+    padding: 4px 8px;
+
+    border-radius: 6px;
+
+    background-color: #eff6ff;
+    color: #25eb67;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+section[aria-label="Klic Courses"] > article > h3 {
+    margin-top: 12px;
+    margin-bottom: 10px;
+    padding: 0 12px;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    color: #25467c;
+}
+section[aria-label="Klic Courses"] > article > p {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding: 0 12px;
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: #5b6c83;
+}
+
+section[aria-label="Klic Courses"] > article {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section[aria-label="Klic Courses"] > article:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(15, 24, 44, 0.1);
+}
+

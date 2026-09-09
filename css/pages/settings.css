@@ -1,0 +1,219 @@
+/* ==========================================================
+   SETTINGS PAGE HEADER
+   ========================================================== */
+section[aria-label="Settings"] {
+    padding: var(--spacing-lg);
+}
+
+section[aria-label="Settings"] > h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--color-text-heading);
+}
+
+section[aria-label="Settings"] > p {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text-body);
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ==========================================================
+   SETTINGS CARD GRID
+   Auto-fit grid so cards wrap naturally (3 up, then 2 up)
+   ========================================================== */
+section[aria-label="Settings"] {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+/* h1/p span the full width above the card grid */
+section[aria-label="Settings"] > h1,
+section[aria-label="Settings"] > p {
+    grid-column: 1 / -1;
+}
+
+/* ==========================================================
+   INDIVIDUAL SETTINGS CARDS
+   ========================================================== */
+section[aria-label="Settings"] > section {
+    background-color: var(--color-white);
+    border-radius: var(--radius-standard);
+    box-shadow: var(--shadow-standard);
+    padding: var(--spacing-lg);
+}
+
+/* ==========================================================
+   CARD HEADING + ICON
+   ========================================================== */
+section[aria-label="Settings"] > section h2 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-heading);
+    margin-bottom: var(--spacing-lg);
+}
+
+section[aria-label="Settings"] > section h2 i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--color-very-light-blue);
+    color: var(--color-primary-blue);
+    font-size: 1.1rem;
+}
+
+/* ==========================================================
+   FORM LAYOUT
+   ========================================================== */
+section[aria-label="Settings"] form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+section[aria-label="Settings"] form label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-body);
+    margin-bottom: calc(var(--spacing-sm) * -1);
+}
+
+/* ==========================================================
+   TEXT / EMAIL / PASSWORD / TEL INPUTS + SELECT
+   ========================================================== */
+section[aria-label="Settings"] form input[type="text"],
+section[aria-label="Settings"] form input[type="email"],
+section[aria-label="Settings"] form input[type="password"],
+section[aria-label="Settings"] form input[type="tel"],
+section[aria-label="Settings"] form select {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-standard);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-text-heading);
+    background-color: var(--color-white);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+section[aria-label="Settings"] form input:focus,
+section[aria-label="Settings"] form select:focus {
+    border-color: var(--color-light-blue);
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+}
+
+/* ==========================================================
+   CHECKBOX ROWS (Notification Preferences)
+   ========================================================== */
+section[aria-label="Notification Preferences"] form label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-weight: 500;
+    color: var(--color-text-heading);
+    margin-bottom: 0;
+}
+
+section[aria-label="Notification Preferences"] form input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-primary-blue);
+    cursor: pointer;
+}
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+section[aria-label="Settings"] form button {
+    align-self: flex-start;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--radius-standard);
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+section[aria-label="Settings"] form button:hover {
+    background-color: var(--color-dark-blue);
+}
+
+/* ==========================================================
+   RESPONSIVE - TABLET (≤1024px)
+=========================================================== */
+@media (max-width: 1024px) {
+
+    /* Slightly reduce the minimum card width so 2 cards fit
+       more comfortably before dropping to 1 per row */
+    section[aria-label="Settings"] {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+}
+
+/* ==========================================================
+   RESPONSIVE - MOBILE (≤640px)
+=========================================================== */
+@media (max-width: 640px) {
+
+    section[aria-label="Settings"] {
+        padding: var(--spacing-md);
+        gap: var(--spacing-md);
+        grid-template-columns: 1fr; /* force single column on mobile */
+    }
+
+    section[aria-label="Settings"] > h1 {
+        font-size: 1.4rem;
+    }
+
+    /* Individual cards: tighter padding */
+    section[aria-label="Settings"] > section {
+        padding: var(--spacing-md);
+    }
+
+    section[aria-label="Settings"] > section h2 {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    section[aria-label="Settings"] > section h2 i {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
+    /* Buttons: full width on mobile for easier tapping */
+    section[aria-label="Settings"] form button {
+        align-self: stretch;
+        text-align: center;
+    }
+
+}
+
+
+/* ==========================================================
+   INDIVIDUAL SETTINGS CARDS - HOVER EFFECT
+   ========================================================== */
+section[aria-label="Settings"] > section {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section[aria-label="Settings"] > section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.12);
+}

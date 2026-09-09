@@ -1,0 +1,843 @@
+/* ==========================================================
+   GOOGLE FONTS IMPORT
+   Poppins  -> used for headings (h1-h6)
+   Inter    -> used for body text
+=========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ==========================================================
+   CSS VARIABLES (ROOT)
+   Reusable design tokens: colors, radius, shadow, spacing
+=========================================================== */
+:root {
+
+    /* Color palette - modern blue */
+    --color-primary-blue: #2563eb;
+    --color-dark-blue: #0B1F3A;;
+    --color-light-blue: #60a5fa;
+    --color-very-light-blue: #eff6ff;
+    --color-white: #ffffff;
+    --color-light-gray: #f3f4f6;
+    --color-border: #dbe4f0;
+    --color-text-body: #334155;
+    --color-text-heading: #1e293b;
+
+    /* Border radius */
+    --radius-standard: 8px;
+
+    /* Box shadow */
+    --shadow-standard: 0 2px 8px rgba(30, 58, 138, 0.1);
+
+    /* Spacing scale */
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+
+}
+
+/* ==========================================================
+   CSS RESET
+   A simple, beginner-friendly reset
+=========================================================== */
+
+/* Remove default margin and padding from every element,
+   and make box-sizing predictable everywhere */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Make images responsive by default */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Remove default list bullets/numbers */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove default underline from links */
+a {
+    text-decoration: none;
+}
+
+/* ==========================================================
+   BASE TYPOGRAPHY
+=========================================================== */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ==========================================================
+   PAGE LAYOUT (CSS GRID)
+   header  -> full width, top row
+   aside   -> left sidebar, fixed width
+   main    -> fills remaining space
+   footer  -> full width, bottom row
+=========================================================== */
+html,
+body {
+   html, body {
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+    
+}
+
+body {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer  footer";
+    
+}
+
+header {
+    grid-area: header;
+    
+}
+
+aside {
+    grid-area: sidebar;
+    overflow-y: auto;
+    
+}
+    
+
+
+main {
+    grid-area: main;
+    padding: var(--spacing-lg);
+    overflow-y: auto;
+    line-height: 1.6;
+    min-height: 0;
+    
+    
+}
+/* dont forget to do some things  here */
+/* ==========================================================
+   FOOTER - BACKGROUND & SPACING
+   Dark blue background, light text, generous padding,
+   separated from main content above. Links not styled yet.
+=========================================================== */
+footer {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+    
+footer {
+    grid-area: footer;
+    display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+/* ==========================================================
+   FOOTER - TYPOGRAPHY
+   Inter for body text, Poppins for section headings.
+   Overall sizing kept smaller than main dashboard content.
+   Links not styled yet.
+=========================================================== */
+footer {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+}
+
+footer h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+footer p {
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+
+/* ==========================================================
+   FOOTER - LINK STYLING
+   Light text, no underline, spacing between links,
+   subtle hover effect. Footer layout untouched.
+=========================================================== */
+footer a {
+    color: var(--color-light-blue);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer li,
+footer address p {
+    margin-bottom: var(--spacing-sm);
+}
+
+footer a:hover {
+    color: var(--color-white);
+}
+/* ==========================================================
+   FOOTER - SECTION DIVIDERS
+   Subtle vertical border between sections for visual
+   separation. No new colors introduced - uses existing
+   white text color at reduced opacity.
+=========================================================== */
+footer > *:not(:last-child) {
+    padding-left: var(--spacing-lg);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+footer > *:not(:first-child) {
+    padding-left: var(--spacing-lg);
+}
+
+/* ==========================================================
+   FOOTER - SOCIAL ICONS
+   Equal size, evenly spaced, horizontally aligned via
+   Flexbox. Subtle hover effect. No other footer elements
+   touched.
+=========================================================== */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+    transition: opacity 0.2s ease;
+}
+
+.social-icons img:hover {
+    opacity: 0.7;
+}
+
+
+/* ==========================================================
+   DASHBOARD HEADER
+   Logo + title on the left, admin profile pushed to the right
+=========================================================== */
+header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+}
+
+/* Push the administrator profile to the far right of the header */
+header section[aria-label="Administrator Profile"] {
+    margin-left: auto;
+}
+
+/* ==========================================================
+   SIDEBAR
+   Dark blue background for contrast against the white main
+   content area. Nav links are not styled yet.
+=========================================================== */
+aside {
+    background-color: var(--color-dark-blue);
+    padding: var(--spacing-lg);
+    min-height: 0;   /* let it respect the grid row instead of growing past it */
+    height: 100%;    /* stretch to fill the full "sidebar" grid row height */
+    
+}
+
+/* ==========================================================
+   SIDEBAR NAVIGATION HEADING
+=========================================================== */
+aside nav h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-light-blue);
+}
+
+/* ==========================================================
+   SIDEBAR NAVIGATION LINKS
+=========================================================== */
+
+/* Comfortable spacing between links */
+aside nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+/* Block-level clickable area, generous padding, rounded corners,
+   body font, colors from the sidebar's palette */
+aside nav a {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-standard);
+    font-family: 'Inter', sans-serif;
+    color: var(--color-white);
+    transition: background-color 0.2s ease;
+}
+
+/* Slightly lighten the background on hover, text stays white and readable */
+aside nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Distinct highlight for the current page - lighter blue background,
+   bolder text, and a left accent border */
+aside nav a.active {
+    background-color: var(--color-light-blue);
+    font-weight: 600;
+    border-left: 4px solid var(--color-white);
+}
+
+/* Fixed icon size so every icon takes up equal space -
+   keeps labels aligned regardless of icon length */
+aside nav a img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* ==========================================================
+   DASHBOARD STATISTICS CONTAINER
+   Four equally sized columns using CSS Grid. Cards themselves
+   are not styled yet.
+=========================================================== */
+section[aria-label="Dashboard Statistics"] {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+}
+
+/* ==========================================================
+   DASHBOARD STATISTIC CARDS
+   White background, standard radius, generous padding,
+   content stacked vertically. Icon and typography not
+   styled yet.
+=========================================================== */
+section[aria-label="Dashboard Statistics"] article {
+    background-color: var(--color-white);
+    border-radius: var(--radius-standard);
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    box-shadow: var(--shadow-standard);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Subtle lift and deeper shadow on hover */
+section[aria-label="Dashboard Statistics"] article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.15);
+}
+
+/* ==========================================================
+   STATISTIC NUMBER
+   The large figure in each card (first <p>, before the title).
+   Titles and descriptions are untouched.
+=========================================================== */
+section[aria-label="Dashboard Statistics"] article p:first-of-type {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--color-primary-blue);
+}
+
+/* ==========================================================
+   STATISTIC CARD TITLES
+   Descriptions are untouched.
+=========================================================== */
+section[aria-label="Dashboard Statistics"] article h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    color: var(--color-text-heading);
+    margin: var(--spacing-sm) 0;
+}
+
+/* ==========================================================
+   STATISTIC CARD ICON
+   Fixed size, left-aligned with the card's text content.
+   Spacing from the number comes from the card's flex gap.
+=========================================================== */
+section[aria-label="Dashboard Statistics"] article img {
+    width: 48px;
+    height: 48px;
+    align-self: flex-start;
+}
+
+/* ==========================================================
+   RECENT ACTIVITIES CONTAINER
+   Styles the section wrapping the table only - the table
+   itself is not styled yet.
+=========================================================== */
+section[aria-label="Recent Activities"] {
+    background-color: var(--color-white);
+    border-radius: var(--radius-standard);
+    box-shadow: var(--shadow-standard);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+/* ==========================================================
+   RECENT ACTIVITIES TABLE
+   Header (th) and status values are not styled yet.
+=========================================================== */
+section[aria-label="Recent Activities"] table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family: 'Inter', sans-serif;
+}
+
+section[aria-label="Recent Activities"] td {
+    padding: 14px 16px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Long course titles wrap within the column instead of
+   stretching it or breaking the table's layout */
+section[aria-label="Recent Activities"] td:nth-child(2) {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* ==========================================================
+   RECENT ACTIVITIES TABLE ROWS
+   Alternating row background. Status badges are untouched.
+=========================================================== */
+section[aria-label="Recent Activities"] tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+section[aria-label="Recent Activities"] tbody tr:nth-child(even) {
+    background-color: var(--color-light-gray);
+}
+
+/* Subtle background change on row hover */
+section[aria-label="Recent Activities"] tbody tr:hover {
+    background-color: var(--color-very-light-blue);
+}
+
+/* ==========================================================
+   RECENT ACTIVITIES TABLE HEADER
+   Table rows/body are untouched.
+=========================================================== */
+section[aria-label="Recent Activities"] thead th {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    padding: 14px 16px;
+}
+
+/* ==========================================================
+   STATUS BADGES
+   Classes live on a <span> inside each td, not on the td
+   itself - this keeps the td a real table cell (so
+   vertical-align: middle works correctly) while the span
+   hugs only its own text as a compact pill.
+=========================================================== */
+section[aria-label="Recent Activities"] .status-completed,
+section[aria-label="Recent Activities"] .status-pending,
+section[aria-label="Recent Activities"] .status-in-progress {
+    display: inline-block;
+    white-space: nowrap;
+    border-radius: 9999px;
+    padding: 6px 14px;
+    font-weight: 700;
+}
+
+section[aria-label="Recent Activities"] .status-completed {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+section[aria-label="Recent Activities"] .status-pending {
+    background-color: #ffedd5;
+    color: #9a3412;
+}
+
+section[aria-label="Recent Activities"] .status-in-progress {
+    background-color: #dbeafe;
+    color: var(--color-dark-blue);
+}
+
+/* ==========================================================
+   STUDENT & DATE COLUMN EMPHASIS
+   Student (1st column) stands out as the primary focus.
+   Date (4th column) is muted and secondary.
+=========================================================== */
+section[aria-label="Recent Activities"] tbody td:nth-child(1) {
+    color: var(--color-text-heading);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+section[aria-label="Recent Activities"] tbody td:nth-child(4) {
+    color: #6b7280;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+/* ==========================================================
+   STATUS COLUMN ALIGNMENT
+   Status is the 5th column (Student, Course, Activity, Date,
+   Status) - right-aligns both the header cell and data cells.
+=========================================================== */
+section[aria-label="Recent Activities"] th:nth-child(5),
+section[aria-label="Recent Activities"] td:nth-child(5) {
+    text-align: right;
+}
+
+
+
+/* ==========================================================
+   LATEST ANNOUNCEMENTS CONTAINER
+   Styles the section wrapping the announcement cards only -
+   the cards themselves are not styled yet.
+=========================================================== */
+section[aria-label="Latest Announcements"] {
+    background-color: var(--color-white);
+    border-radius: var(--radius-standard);
+    box-shadow: var(--shadow-standard);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+
+/* ==========================================================
+   ANNOUNCEMENT CARDS
+   Typography (heading, description, date, priority label)
+   is not styled yet.
+=========================================================== */
+section[aria-label="Latest Announcements"] article {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-standard);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-sm) var(--spacing-md);
+    box-shadow: var(--shadow-standard);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+/* Understated lift and deeper shadow on hover */
+section[aria-label="Latest Announcements"] article:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(30, 58, 138, 0.12);
+}
+
+
+/* Icon: fixed size, doesn't shrink */
+section[aria-label="Latest Announcements"] article img {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+ 
+/* Heading: shares the top row with the icon, fills remaining space */
+section[aria-label="Latest Announcements"] article h4 {
+    flex: 1;
+}
+ 
+/* Description: drops to its own full-width row */
+section[aria-label="Latest Announcements"] article p {
+    flex-basis: 100%;
+}
+ 
+/* Date: sits at the start of the final row */
+section[aria-label="Latest Announcements"] article time {
+    flex-shrink: 0;
+}
+ 
+/* Priority badge: pushed to the end of the final row, next to the date */
+section[aria-label="Latest Announcements"] article span {
+    margin-left: auto;
+    flex-shrink: 0;
+}
+ 
+
+
+/* ==========================================================
+   ANNOUNCEMENT CARD TYPOGRAPHY
+   Priority badges are not styled here.
+=========================================================== */
+section[aria-label="Latest Announcements"] article h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--color-text-heading);
+}
+ 
+section[aria-label="Latest Announcements"] article p {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text-body);
+    line-height: 1.6;
+}
+ 
+section[aria-label="Latest Announcements"] article time {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+ 
+/* ==========================================================
+   PRIORITY BADGES
+   Shared badge shape, then a distinct color per priority.
+=========================================================== */
+section[aria-label="Latest Announcements"] .priority-important,
+section[aria-label="Latest Announcements"] .priority-academic,
+section[aria-label="Latest Announcements"] .priority-general {
+    border-radius: 9999px;
+    padding: 6px 14px;
+    font-weight: 700;
+}
+ 
+/* Urgent - warm red, distinct from the dashboard's blue palette
+   to signal higher importance */
+section[aria-label="Latest Announcements"] .priority-important {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+ 
+/* Academic - reuses the dashboard's core blue tones */
+section[aria-label="Latest Announcements"] .priority-academic {
+    background-color: #dbeafe;
+    color: var(--color-dark-blue);
+}
+ 
+/* General - neutral gray, lowest visual weight */
+section[aria-label="Latest Announcements"] .priority-general {
+    background-color: var(--color-light-gray);
+    color: var(--color-text-body);
+
+}
+
+/* ==========================================================
+   SIDEBAR TOGGLE (MOBILE)
+   Checkbox-driven off-canvas sidebar - no JS
+=========================================================== */
+
+/* Hide the raw checkbox visually, keep it functional */
+.sidebar-toggle-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Style the label as a clean tappable icon button */
+.sidebar-toggle-label {
+    display: none; /* hidden by default on desktop */
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-standard);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-toggle-label:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-toggle-label img {
+    width: 24px;
+    height: 24px;
+}
+
+/* ==========================================================
+   RESPONSIVE - TABLET AND BELOW
+=========================================================== */
+@media (max-width: 1024px) {
+
+    body {
+        grid-template-columns: 1fr; /* sidebar no longer takes a fixed column */
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+    }
+
+    /* Show the hamburger toggle */
+    .sidebar-toggle-label {
+        display: flex;
+    }
+
+    /* Sidebar becomes an off-canvas panel, hidden by default */
+    aside {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 100;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+    }
+
+    /* When the checkbox is checked, slide the sidebar into view */
+    .sidebar-toggle-checkbox:checked ~ aside {
+        transform: translateX(0);
+    }
+
+    /* Dim/overlay the rest of the page when sidebar is open */
+    .sidebar-toggle-checkbox:checked ~ main::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 90;
+    }
+
+    /* Dashboard Statistics: 4 columns -> 2 columns */
+    section[aria-label="Dashboard Statistics"] {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==========================================================
+   RESPONSIVE - MOBILE
+=========================================================== */
+@media (max-width: 640px) {
+
+    header {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    header h1 {
+        font-size: 1.1rem;
+    }
+
+    main {
+        padding: var(--spacing-md);
+    }
+
+    /* Dashboard Statistics: 2 columns -> 1 column */
+    section[aria-label="Dashboard Statistics"] {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer: stack sections vertically instead of horizontal flex row */
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+
+    footer > *:not(:last-child) {
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding-bottom: var(--spacing-md);
+        width: 100%;
+    }
+
+    footer > *:not(:first-child) {
+        padding-left: 0;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    section[aria-label="Recent Activities"] {
+        overflow-x: auto;
+    }
+
+    section[aria-label="Recent Activities"] table {
+        min-width: 700px; /* keeps columns readable, forces horizontal scroll instead of squishing */
+    }
+
+}
+
+aside nav a i {
+    font-size: 1.2rem;
+    width: 20px;
+    flex-shrink: 0;
+}
+
+aside nav a img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+header .sidebar-toggle-label i,
+.site-logo i {
+    font-size: 1.5rem;
+}
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--color-white);
+}
+
+.site-logo i {
+    color: var(--color-light-blue);
+}
+
+section[aria-label="Administrator Profile"] {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+section[aria-label="Administrator Profile"] img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+main {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+main::-webkit-scrollbar {
+    display: none;
+}
+
+/* ==========================================================
+   HIDE SCROLLBAR (VISUAL ONLY - STILL SCROLLABLE)
+=========================================================== */
+aside {
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE / old Edge */
+}
+
+aside::-webkit-scrollbar {
+    display: none;               /* Chrome, Safari, newer Edge */
+}

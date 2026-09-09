@@ -1,0 +1,472 @@
+/* ==========================================================
+   MESSAGES PAGE HEADER
+   ========================================================== */
+
+section[aria-label="Messages"] {
+    padding: var(--spacing-lg);
+}
+
+section[aria-label="Messages"] > h1 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-dark-blue);
+}
+
+section[aria-label="Messages"] > p {
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--color-text-light);
+}
+
+/* ==========================================================
+   MESSAGE SEARCH
+   ========================================================== */
+
+section[aria-label="Messages"] > search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: var(--spacing-lg);
+}
+
+section[aria-label="Messages"] > search label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+section[aria-label="Messages"] > search input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 9px;
+    background-color: var(--color-white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-dark-blue);
+    outline: none;
+}
+
+section[aria-label="Messages"] > search input::placeholder {
+    color: var(--color-text-light);
+}
+
+section[aria-label="Messages"] > search input:focus {
+    border-color: var(--color-light-blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.10);
+}
+
+/* ==========================================================
+   MESSAGES INBOX
+   Two-column split-pane layout: conversation list + active thread
+=========================================================== */
+
+section[aria-label="Messages Inbox"] {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: flex-start;
+}
+
+section[aria-label="Conversation List"] {
+    flex: 0 0 380px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+section[aria-label="Active Conversation"] {
+    flex: 1;
+    min-width: 0;
+    background-color: #ffffff;
+    border-left: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================
+   INBOX HEADING
+   ========================================================== */
+
+section[aria-label="Conversation List"] > h2 {
+    margin: 0;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* ==========================================================
+   CONVERSATION LIST
+   ========================================================== */
+
+section[aria-label="Conversation List"] > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+section[aria-label="Conversation List"] > ul > li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 42px 1fr auto;
+    grid-template-rows: auto auto auto;
+    column-gap: 12px;
+    padding: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+section[aria-label="Conversation List"] > ul > li:last-child {
+    border-bottom: none;
+}
+
+/* ==========================================================
+   AVATAR (span, not img)
+   ========================================================== */
+
+section[aria-label="Conversation List"] > ul > li > span {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    background-color: #dbeafe;
+    color: #2563eb;
+    flex-shrink: 0;
+}
+
+/* Per-conversation avatar + course-name colors */
+section[aria-label="Conversation List"] > ul > li:nth-child(1) > span {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+section[aria-label="Conversation List"] > ul > li:nth-child(1) > p:nth-of-type(2) {
+    color: #1e40af;
+}
+
+section[aria-label="Conversation List"] > ul > li:nth-child(2) > span {
+    background-color: #ede9fe;
+    color: #5b21b6;
+}
+section[aria-label="Conversation List"] > ul > li:nth-child(2) > p:nth-of-type(2) {
+    color: #5b21b6;
+}
+
+section[aria-label="Conversation List"] > ul > li:nth-child(3) > span {
+    background-color: #dcfce7;
+    color: #166534;
+}
+section[aria-label="Conversation List"] > ul > li:nth-child(3) > p:nth-of-type(2) {
+    color: #166534;
+}
+
+section[aria-label="Conversation List"] > ul > li:nth-child(4) > span {
+    background-color: #ffedd5;
+    color: #9a3412;
+}
+section[aria-label="Conversation List"] > ul > li:nth-child(4) > p:nth-of-type(2) {
+    color: #9a3412;
+}
+
+/* ==========================================================
+   SENDER NAME
+   ========================================================== */
+
+section[aria-label="Conversation List"] > ul > li > p:nth-of-type(1) {
+    grid-column: 2;
+    margin: 0 0 3px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* ==========================================================
+   COURSE NAME
+   ========================================================== */
+
+section[aria-label="Conversation List"] > ul > li > p:nth-of-type(2) {
+    grid-column: 2;
+    margin: 0 0 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* ==========================================================
+   MESSAGE PREVIEW
+   ========================================================== */
+
+section[aria-label="Conversation List"] > ul > li > p:nth-of-type(3) {
+    grid-column: 2;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #64748b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ==========================================================
+   MESSAGE TIME
+   ========================================================== */
+
+section[aria-label="Conversation List"] > ul > li > time {
+    grid-column: 3;
+    grid-row: 1;
+    font-size: 11px;
+    color: #94a3b8;
+    white-space: nowrap;
+}
+
+/* ==========================================================
+   UNREAD BADGE
+   ========================================================== */
+
+section[aria-label="Conversation List"] > ul > li > p:last-child {
+    grid-column: 3;
+    grid-row: 2;
+    justify-self: end;
+    align-self: center;
+    min-width: 20px;
+    height: 20px;
+    margin: 4px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #3b82f6;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* ==========================================================
+   HOVER
+   ========================================================== */
+
+section[aria-label="Conversation List"] > ul > li:hover {
+    background-color: #f8fafc;
+}
+
+/* ==========================================================
+   ACTIVE CONVERSATION (selected state in list)
+   ========================================================== */
+
+section[aria-label="Conversation List"] > ul > li[aria-current="true"] {
+    background-color: #eff6ff;
+    border-left: 3px solid #3b82f6;
+}
+
+section[aria-label="Conversation List"] > ul > li[aria-current="true"] > p:nth-of-type(1) {
+    color: #1e40af;
+}
+
+/* =========================================
+   SELECTED CONVERSATION HEADER (right pane top)
+   ========================================= */
+
+section[aria-label="Selected Conversation"] {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 22px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+section[aria-label="Selected Conversation"] span {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #dbeafe;
+    color: #1e40af;
+    font-size: 15px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+section[aria-label="Selected Conversation"] h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+section[aria-label="Selected Conversation"] p {
+    margin: 3px 0 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* =========================================
+   CONVERSATION ACTIONS
+   ========================================= */
+
+section[aria-label="Selected Conversation"] button:first-of-type {
+    margin-left: auto;
+}
+
+section[aria-label="Selected Conversation"] button {
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #64748b;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+section[aria-label="Selected Conversation"] button:hover {
+    background-color: #eff6ff;
+    color: #2563eb;
+}
+
+/* =========================================
+   MESSAGE THREAD
+   ========================================= */
+
+section[aria-label="Message"] {
+    flex: 1;
+    padding: 24px;
+    background-color: #f8fafc;
+}
+
+section[aria-label="Message"] article {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 12px;
+    max-width: 700px;
+}
+
+/* Message avatar (span, not img) */
+section[aria-label="Message"] article span {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #dbeafe;
+    color: #1e40af;
+    font-size: 13px;
+    font-weight: 700;
+    grid-row: span 3;
+}
+
+section[aria-label="Message"] article > p:first-of-type {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+section[aria-label="Message"] article time {
+    display: block;
+    margin-top: 3px;
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+section[aria-label="Message"] article > p:last-of-type {
+    margin: 10px 0 0;
+    padding: 12px 15px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px 12px 12px 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+}
+
+/* =========================================
+   REPLY FORM
+   ========================================= */
+
+section[aria-label="Active Conversation"] form {
+    padding: 16px 22px;
+    border-top: 1px solid #e2e8f0;
+    background-color: #ffffff;
+}
+
+section[aria-label="Active Conversation"] form h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: #1e293b;
+}
+
+section[aria-label="Active Conversation"] form label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: #64748b;
+}
+
+section[aria-label="Active Conversation"] form textarea {
+    width: 100%;
+    min-height: 90px;
+    padding: 12px;
+    border: 1px solid #dbe3ef;
+    border-radius: 8px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 14px;
+    color: #1e293b;
+    outline: none;
+}
+
+section[aria-label="Active Conversation"] form textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.10);
+}
+
+/* =========================================
+   REPLY ACTION BUTTONS
+   ========================================= */
+
+section[aria-label="Active Conversation"] form button {
+    margin-top: 10px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+section[aria-label="Active Conversation"] form button[type="button"] {
+    width: 34px;
+    height: 34px;
+    margin-right: 6px;
+    background-color: #f1f5f9;
+    color: #64748b;
+}
+
+section[aria-label="Active Conversation"] form button[type="submit"] {
+    float: right;
+    padding: 9px 20px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+section[aria-label="Active Conversation"] form button[type="submit"]:hover {
+    background-color: #1d4ed8;
+}

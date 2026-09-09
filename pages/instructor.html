@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor | Learning Mangement System</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/pages/instructor.css">
+   <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+     
+    <!-- Sidebar toggle (mobile) -->
+<input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox">
+
+<!-- ==========================================================
+     HEADER
+     Contains the application branding and administrator profile
+=========================================================== -->
+<header>
+
+    <!-- Sidebar toggle (mobile) -->
+    <label for="sidebar-toggle" class="sidebar-toggle-label" aria-label="Toggle navigation menu">
+        <i class='bx bx-menu'></i>
+    </label>
+
+    <!-- Application logo and title (Boxicons) -->
+    <a href="/index.html" class="site-logo">
+        <i class='bx bx-book-reader'></i>
+        <h1>Learning Management System</h1>
+    </a>
+
+    <!-- Administrator profile area (real image) -->
+    <section aria-label="Administrator Profile">
+        <img src="../images/1.jpeg" alt="Administrator profile picture">
+        <p>Administrator</p>
+    </section>
+
+</header>
+
+    <!-- ==========================================================
+         SIDEBAR NAVIGATION
+         Shared with the Dashboard page - Students is now active
+    =========================================================== -->
+    <aside>
+          <nav aria-label="Main Navigation">
+    <h2>Navigation</h2>
+    <ul>
+        <li><a href="/index.html"><i class='bx bx-grid-alt'></i>Dashboard</a></li>
+        <li><a href="/pages/student.html"><i class='bx bx-user'></i>Students</a></li>
+        <li><a href="/pages/course.html"><i class='bx bx-book'></i>Courses</a></li>
+        <li><a href="/pages/instructor.html" class="active"><i class='bx bx-chalkboard'></i>Instructors</a></li>
+        <li><a href="/pages/assignment.html"><i class='bx bx-clipboard'></i>Assignments</a></li>
+        <li><a href="/pages/exam.html"><i class='bx bx-file'></i>Exams</a></li>
+        <li><a href="/pages/certificate.html"><i class='bx bx-certification'></i>Certificates</a></li>
+        <li><a href="/pages/message.html"><i class='bx bx-envelope'></i>Messages</a></li>
+        <li><a href="/pages/report.html"><i class='bx bx-bar-chart-alt-2'></i>Reports</a></li>
+        <li><a href="/pages/settings.html"><i class='bx bx-cog'></i>Settings</a></li>
+    </ul>
+        </nav>
+    </aside>
+    <main>
+
+        <section aria-label="Instructors">
+            
+            <h1>Instructors</h1>
+
+            <p>Dashboard &gt; Instructors</p>
+
+            <button type="button">
+                + Add Instructor
+            </button>
+        </section>
+
+
+        <!-- ======================================================
+     TOOLBAR
+     Search (left) and department filter (right)
+     UI structure only - no functionality
+====================================================== -->
+        <section class="instructors-toolbar" aria-label="Instructors Toolbar">
+
+            <search class="instructor-search">
+                <label for="instructor-search-input">Search instructors</label>
+                <input type="search" id="instructor-search-input" name="instructor-search" placeholder="Search instructors by name, email or department...">
+            </search>
+
+            <form class="instructor-filter" aria-label="Filter Instructors">
+                <label for="filter-department">Department</label>
+                <select id="filter-department" name="department">
+                    <option value="">All Departments</option>
+                    <option value="computer-science">Computer Science</option>
+                    <option value="mathematics">Mathematics</option>
+                    <option value="business-administration">Business Administration</option>
+                    <option value="psychology">Psychology</option>
+                    <option value="physics">Physics</option>
+                    <option value="english-language">English Language</option>
+                </select>
+            </form>
+
+        </section>
+
+        <section aria-label="Faculty Members">
+
+            <h2>Faculty Members</h2>
+
+            <p>9 instructors across 7 departments</p>
+
+            <article aria-labelledby="instructor-1-name">
+                <img src="images/instructor-sarah-mitchell.png" alt="Photo of Dr. Sarah Mitchell">
+
+                <h3 id="instructor-1-name">Dr. Sarah Mitchell</h3>
+
+                <p>Department: Computer Science</p>
+
+                <p class="availability available">Available</p>
+
+                <p>Courses Taught: Introduction to Web Development, Database Design Fundamentals</p>
+
+                <p>Email: sarah.mitchell@example.edu</p>
+
+                <p>Phone: +1 (555) 201-3344</p>
+            </article>
+
+            <article aria-labelledby="instructor-2-name">
+                <img src="images/instructor-emeka-chukwu.png" alt="Photo of Prof. Emeka Chukwu">
+
+                <h3 id="instructor-2-name">Prof. Emeka Chukwu</h3>
+
+                <p>Department: Business</p>
+
+                <p class="availability available">Available</p>
+
+                <p>Courses Taught: Principles of Marketing, Business Statistics</p>
+
+                <p>Email: emeka.chukwu@example.edu</p>
+
+                <p>Phone: +1 (555) 202-5567</p>
+            </article>
+
+            <article aria-labelledby="instructor-3-name">
+                <img src="images/instructor-amara-nwosu.png" alt="Photo of Dr. Amara Nwosu">
+
+                <h3 id="instructor-3-name">Dr. Amara Nwosu</h3>
+
+                <p>Department: Chemistry</p>
+
+                <p class="availability on-leave">On Leave</p>
+
+                <p>Courses Taught: Organic Chemistry I</p>
+
+                <p>Email: amara.nwosu@example.edu</p>
+
+                <p>Phone: +1 (555) 203-7788</p>
+            </article>
+
+            <article aria-labelledby="instructor-4-name">
+                <img src="images/instructor-michael-tan.png" alt="Photo of Dr. Michael Tan">
+
+                <h3 id="instructor-4-name">Dr. Michael Tan</h3>
+
+                <p>Department: Mathematics</p>
+
+                <p class="availability available">Available</p>
+
+                <p>Courses Taught: Calculus II</p>
+
+                <p>Email: michael.tan@example.edu</p>
+
+                <p>Phone: +1 (555) 204-9911</p>
+            </article>
+
+            <article aria-labelledby="instructor-5-name">
+                <img src="images/instructor-grace-umeh.png" alt="Photo of Prof. Grace Umeh">
+
+                <h3 id="instructor-5-name">Prof. Grace Umeh</h3>
+
+                <p>Department: Social Sciences</p>
+
+                <p class="availability available">Available</p>
+
+                <p>Courses Taught: Introduction to Sociology</p>
+
+                <p>Email: grace.umeh@example.edu</p>
+
+                <p>Phone: +1 (555) 205-2233</p>
+            </article>
+
+            <article aria-labelledby="instructor-6-name">
+                <img src="images/instructor-tunde-bakare.png" alt="Photo of Dr. Tunde Bakare">
+
+                <h3 id="instructor-6-name">Dr. Tunde Bakare</h3>
+
+                <p>Department: Information Technology</p>
+
+                <p class="availability unavailable">Unavailable</p>
+
+                <p>Courses Taught: Cloud Computing Essentials</p>
+
+                <p>Email: tunde.bakare@example.edu</p>
+
+                <p>Phone: +1 (555) 206-4455</p>
+            </article>
+
+            <article aria-labelledby="instructor-7-name">
+                <img src="images/instructor-ifeoma-nwachukwu.png" alt="Photo of Dr. Ifeoma Nwachukwu">
+
+                <h3 id="instructor-7-name">Dr. Ifeoma Nwachukwu</h3>
+
+                <p>Department: Humanities</p>
+
+                <p class="availability available">Available</p>
+
+                <p>Courses Taught: Academic Writing</p>
+
+                <p>Email: ifeoma.nwachukwu@example.edu</p>
+
+                <p>Phone: +1 (555) 207-6677</p>
+            </article>
+
+            <article aria-labelledby="instructor-8-name">
+                <img src="images/instructor-fatima-bello.png" alt="Photo of Prof. Fatima Bello">
+
+                <h3 id="instructor-8-name">Prof. Fatima Bello</h3>
+
+                <p>Department: Social Sciences</p>
+
+                <p class="availability available">Available</p>
+
+                <p>Courses Taught: Introduction to Psychology</p>
+
+                <p>Email: fatima.bello@example.edu</p>
+
+                <p>Phone: +1 (555) 208-8899</p>
+            </article>
+
+            <article aria-labelledby="instructor-9-name">
+                <img src="images/instructor-chinedu-okafor.png" alt="Photo of Dr. Chinedu Okafor">
+
+                <h3 id="instructor-9-name">Dr. Chinedu Okafor</h3>
+
+                <p>Department: Business</p>
+
+                <p class="availability available">Available</p>
+
+                <p>Courses Taught: Business Statistics</p>
+
+                <p>Email: chinedu.okafor@example.edu</p>
+
+                <p>Phone: +1 (555) 209-1122</p>
+            </article>
+
+        </section>
+        </main>
+    
+
+    <!-- ==========================================================
+         FOOTER
+         Shared with the Dashboard page
+    =========================================================== -->
+    <footer>
+
+        <!-- Copyright -->
+        <section aria-label="Copyright">
+            <p>&copy; 2026 University Learning Management System. All rights reserved.</p>
+            <a href="accessibility.html">Accessibility Statement</a>
+        </section>
+
+        <!-- Quick Links -->
+        <nav aria-label="Quick Links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="reports.html">Reports</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contact Information -->
+        <address aria-label="Contact Information">
+            <h2>Contact Information</h2>
+            <p><a href="mailto:support@example.com">support@example.com</a></p>
+            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+        </address>
+
+        <!-- Version Information -->
+        <section aria-label="Version Information">
+            <p>Version 1.0.0</p>
+            <p>Last updated: August 12, 2026</p>
+        </section>
+
+    </footer>
+</body>
+</html>

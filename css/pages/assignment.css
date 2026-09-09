@@ -1,0 +1,290 @@
+/* =========================================
+   ASSIGNMENTS PAGE
+   ========================================= */
+
+main > section[aria-label="Assignments"] {
+    margin: 0;
+    padding: 40px;
+}
+/* =========================================
+   ASSIGNMENTS PAGE HEADING
+   ========================================= */
+
+main > section[aria-label="Assignments"] > h1 {
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    color: #1e293b;
+}
+
+
+/* =========================================
+   ASSIGNMENTS DESCRIPTION
+   ========================================= */
+
+main > section[aria-label="Assignments"] > p {
+    margin-top: 8px;
+    margin-bottom: 32px;
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    color: #64748b;
+}
+
+/* =========================================
+   ASSIGNMENTS PAGE HEADING
+   ========================================= */
+
+main > section[aria-label="Assignments"] > h1 {
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    color: #1e293b;
+}
+
+
+/* =========================================
+   ASSIGNMENTS DESCRIPTION
+   ========================================= */
+
+main > section[aria-label="Assignments"] > p {
+    margin-top: 8px;
+    margin-bottom: 32px;
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    color: #64748b;
+}
+
+/* ==========================================================
+   ASSIGNMENT TABLE SECTION
+=========================================================== */
+
+section[aria-label="Assignment Table"] {
+    background-color: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    overflow-x: auto;
+
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+
+/* ==========================================================
+   SECTION HEADING
+=========================================================== */
+
+section[aria-label="Assignment Table"] > h2 {
+    margin: 0;
+    padding: 20px 20px 10px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    color: #1e293b;
+}
+
+
+/* ==========================================================
+   TABLE CAPTION
+=========================================================== */
+
+section[aria-label="Assignment Table"] table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================================
+   CAPTION
+=========================================================== */
+
+section[aria-label="Assignment Table"] caption {
+    caption-side: top;
+
+    text-align: left;
+
+    padding: 0 20px 18px;
+
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+
+/* ==========================================================
+   TABLE HEADER
+=========================================================== */
+
+section[aria-label="Assignment Table"] thead {
+    background-color: #f8fafc;
+}
+
+
+section[aria-label="Assignment Table"] th {
+    padding: 14px 16px;
+
+    text-align: left;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: #1e293b;
+
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+/* ==========================================================
+   TABLE CELLS
+=========================================================== */
+
+section[aria-label="Assignment Table"] td {
+    padding: 14px 16px;
+
+    vertical-align: middle;
+
+    color: #475569;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+/* ==========================================================
+   COURSE COLUMN
+=========================================================== */
+
+section[aria-label="Assignment Table"] td:first-child {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-weight: 600;
+
+    color: #1e3a8a;
+}
+
+
+/* ==========================================================
+   COURSE IMAGE
+=========================================================== */
+
+section[aria-label="Assignment Table"] td:first-child img {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    display: block;
+}
+
+
+/* ==========================================================
+   ASSIGNMENT NAME
+=========================================================== */
+
+section[aria-label="Assignment Table"] td:nth-child(2) {
+    font-weight: 600;
+
+    color: #1e293b;
+}
+
+
+/* ==========================================================
+   LECTURER
+=========================================================== */
+
+section[aria-label="Assignment Table"] td:nth-child(3) {
+    color: #64748b;
+}
+
+
+/* ==========================================================
+   DUE DATE
+=========================================================== */
+
+section[aria-label="Assignment Table"] td:nth-child(4) {
+    white-space: nowrap;
+
+    color: #475569;
+}
+
+
+/* ==========================================================
+   SUBMISSION STATUS
+=========================================================== */
+
+section[aria-label="Assignment Table"] td:nth-child(5) mark {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    background-color: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ==========================================================
+   PROGRESS
+=========================================================== */
+
+section[aria-label="Assignment Table"] td:nth-child(6) {
+    min-width: 150px;
+}
+
+
+section[aria-label="Assignment Table"] progress {
+    width: 100%;
+    height: 8px;
+
+    display: block;
+}
+
+
+/* ==========================================================
+   ROW HOVER
+=========================================================== */
+
+section[aria-label="Assignment Table"] tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+
+/* ==========================================================
+   LAST ROW
+=========================================================== */
+
+section[aria-label="Assignment Table"] tbody tr:last-child td {
+    border-bottom: none;
+}

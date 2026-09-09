@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Learning Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+    <!-- Sidebar toggle (mobile) -->
+<input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox">
+
+<!-- ==========================================================
+     HEADER
+     Contains the application branding and administrator profile
+=========================================================== -->
+<header>
+
+    <!-- Sidebar toggle (mobile) -->
+    <label for="sidebar-toggle" class="sidebar-toggle-label" aria-label="Toggle navigation menu">
+        <i class='bx bx-menu'></i>
+    </label>
+
+    <!-- Application logo and title (Boxicons) -->
+    <a href="/index.html" class="site-logo">
+        <i class='bx bx-book-reader'></i>
+        <h1>Learning Management System</h1>
+    </a>
+
+    <!-- Administrator profile area (real image) -->
+    <section aria-label="Administrator Profile">
+        <img src="images/1.jpeg" alt="Administrator profile picture">
+        <p>Administrator</p>
+    </section>
+
+</header>
+
+    <!-- ==========================================================
+         SIDEBAR NAVIGATION
+         Main navigation menu for the admin dashboard
+    =========================================================== -->
+    <aside>
+        <nav aria-label="Main Navigation">
+    <h2>Navigation</h2>
+    <ul>
+        <li><a href="index.html" class="active"><i class='bx bx-grid-alt'></i>Dashboard</a></li>
+        <li><a href="/pages/student.html"><i class='bx bx-user'></i>Students</a></li>
+        <li><a href="/pages/course.html"><i class='bx bx-book'></i>Courses</a></li>
+        <li><a href="/pages/instructor.html"><i class='bx bx-chalkboard'></i>Instructors</a></li>
+        <li><a href="/pages/assignment.html"><i class='bx bx-clipboard'></i>Assignments</a></li>
+        <li><a href="/pages/exam.html"><i class='bx bx-file'></i>Exams</a></li>
+        <li><a href="/pages/certificate.html"><i class='bx bx-certification'></i>Certificates</a></li>
+        <li><a href="/pages/message.html"><i class='bx bx-envelope'></i>Messages</a></li>
+        <li><a href="/pages/report.html"><i class='bx bx-bar-chart-alt-2'></i>Reports</a></li>
+        <li><a href="/pages/settings.html"><i class='bx bx-cog'></i>Settings</a></li>
+    </ul>
+</nav>
+    </aside>
+
+    <!-- ==========================================================
+         MAIN CONTENT
+         Dashboard overview: stats, recent activities, announcements
+    =========================================================== -->
+    <main>
+
+        <!-- Page heading and welcome message -->
+        <h2>Dashboard Overview</h2>
+        <p>Welcome back, Administrator! Here is a summary of what is happening across the university's Learning Management System today.</p>
+
+        <!-- ======================================================
+             DASHBOARD STATISTIC CARDS
+        ======================================================= -->
+        <section aria-label="Dashboard Statistics">
+
+            <article>
+                <img src="images/1.jpeg" alt="">
+                <p>3,482</p>
+                <h3>Total Students</h3>
+                <p>Active student accounts currently enrolled across all programs.</p>
+            </article>
+
+            <article>
+                <img src="images/2.jpeg" alt="">
+                <p>128</p>
+                <h3>Active Courses</h3>
+                <p>Courses currently running this semester across all departments.</p>
+            </article>
+
+            <article>
+                <img src="images/3.jpeg" alt="">
+                <p>76</p>
+                <h3>Instructors</h3>
+                <p>Faculty members actively teaching or supervising coursework.</p>
+            </article>
+
+            <article>
+                <img src="images/Oddict.jpeg" alt="">
+                <p>942</p>
+                <h3>Certificates Issued</h3>
+                <p>Certificates awarded to students who have completed their programs.</p>
+            </article>
+
+        </section>
+
+        <!-- ======================================================
+             RECENT ACTIVITIES
+        ======================================================= -->
+        <section aria-label="Recent Activities">
+            <h3>Recent Activities</h3>
+
+            <table>
+                <caption>A log of recent student activity across enrolled courses</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Student</th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Activity</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chidera Obi</td>
+                        <td>Web Development Fundamentals</td>
+                        <td>Submitted Assignment</td>
+                        <td><time datetime="2026-08-03">Aug 3, 2026</time></td>
+                        <td><span class="status-completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>Tunde Bakare</td>
+                        <td>Introduction to Data Structures</td>
+                        <td>Took Midterm Exam</td>
+                        <td><time datetime="2026-08-04">Aug 4, 2026</time></td>
+                        <td><span class="status-completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>Amina Yusuf</td>
+                        <td>Business Statistics</td>
+                        <td>Enrolled in Course</td>
+                        <td><time datetime="2026-08-04">Aug 4, 2026</time></td>
+                        <td><span class="status-pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>Chinedu Okonkwo</td>
+                        <td>Organic Chemistry I</td>
+                        <td>Submitted Final Project</td>
+                        <td><time datetime="2026-08-05">Aug 5, 2026</time></td>
+                        <td><span class="status-in-progress">In Progress</span></td>
+                    </tr>
+                    <tr>
+                        <td>Blessing Adeyemi</td>
+                        <td>Academic Writing</td>
+                        <td>Completed Quiz</td>
+                        <td><time datetime="2026-08-05">Aug 5, 2026</time></td>
+                        <td><span class="status-completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>Fatima Bello</td>
+                        <td>Cloud Computing Essentials</td>
+                        <td>Started Course</td>
+                        <td><time datetime="2026-08-06">Aug 6, 2026</time></td>
+                        <td><span class="status-in-progress">In Progress</span></td>
+                    </tr>
+                    <tr>
+                        <td>Emmanuel Okafor</td>
+                        <td>Principles of Marketing</td>
+                        <td>Watched Lecture Video</td>
+                        <td><time datetime="2026-08-06">Aug 6, 2026</time></td>
+                        <td><span class="status-completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>Grace Umeh</td>
+                        <td>Calculus II</td>
+                        <td>Downloaded Course Materials</td>
+                        <td><time datetime="2026-08-07">Aug 7, 2026</time></td>
+                        <td><span class="status-pending">Pending</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ======================================================
+             LATEST ANNOUNCEMENTS
+        ======================================================= -->
+        <section aria-label="Latest Announcements">
+            <h3>Latest Announcements</h3>
+
+            <article>
+                <img src="images/announcement-registration.png" alt="">
+                <h4>Fall 2026 Semester Registration Now Open</h4>
+                <p>Students can now register for Fall 2026 courses through the student portal. Registration closes on September 5, 2026.</p>
+                <time datetime="2026-08-05">Posted Aug 5, 2026</time>
+                <span class="priority-academic">Academic</span>
+            </article>
+
+            <article>
+                <img src="images/announcement-maintenance.png" alt="">
+                <h4>Scheduled Maintenance: Learning Portal Downtime</h4>
+                <p>The LMS platform will be unavailable on August 10, 2026 from 1:00 AM to 4:00 AM for scheduled server maintenance.</p>
+                <time datetime="2026-08-04">Posted Aug 4, 2026</time>
+                <span class="priority-important">Important</span>
+            </article>
+
+            <article>
+                <img src="images/announcement-certificate.png" alt="">
+                <h4>New Certificate Program in Cloud Computing Launched</h4>
+                <p>The Faculty of Computer Science has introduced a new professional certificate program in Cloud Computing, open for enrollment now.</p>
+                <time datetime="2026-08-02">Posted Aug 2, 2026</time>
+                <span class="priority-general">General</span>
+            </article>
+
+            <article>
+                <img src="images/announcement-exams.png" alt="">
+                <h4>Midterm Examination Schedule Released</h4>
+                <p>The official midterm examination timetable for all faculties has been published. Students should confirm their exam venues and times.</p>
+                <time datetime="2026-08-06">Posted Aug 6, 2026</time>
+                <span class="priority-important">Important</span>
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- ==========================================================
+         FOOTER
+    =========================================================== -->
+    <footer>
+ 
+        <!-- Copyright -->
+        <section aria-label="Copyright">
+            <p>&copy; 2026 University Learning Management System. All rights reserved.</p>
+            <a href="accessibility.html">Accessibility Statement</a>
+        </section>
+ 
+        <!-- Quick Links -->
+        <nav aria-label="Quick Links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="reports.html">Reports</a></li>
+            </ul>
+        </nav>
+ 
+        <!-- Contact Information -->
+        <address aria-label="Contact Information">
+    <h2>Contact Information</h2>
+    <p><a href="mailto:support@example.com">support@example.com</a></p>
+    <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+    <div class="social-icons">
+        <img src="images/facebook-icon.png" alt="Facebook">
+        <img src="images/linkedin-icon.png" alt="LinkedIn">
+        <img src="images/youtube-icon.png" alt="YouTube">
+    </div>
+</address>
+ 
+        <!-- Version Information -->
+        <section aria-label="Version Information">
+            <p>Version 1.0.0</p>
+            <p>Last updated: August 12, 2026</p>
+        </section>
+ 
+    </footer>
+ 
+</body>
+</html>

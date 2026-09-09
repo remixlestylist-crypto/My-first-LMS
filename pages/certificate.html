@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate | Learning Management System</title>
+    <link  rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/pages/certificate.css">
+     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+</head>
+<body>
+    
+   <!-- Sidebar toggle (mobile) -->
+<input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox">
+
+<!-- ==========================================================
+     HEADER
+     Contains the application branding and administrator profile
+=========================================================== -->
+<header>
+
+    <!-- Sidebar toggle (mobile) -->
+    <label for="sidebar-toggle" class="sidebar-toggle-label" aria-label="Toggle navigation menu">
+        <i class='bx bx-menu'></i>
+    </label>
+
+    <!-- Application logo and title (Boxicons) -->
+    <a href="/index.html" class="site-logo">
+        <i class='bx bx-book-reader'></i>
+        <h1>Learning Management System</h1>
+    </a>
+
+    <!-- Administrator profile area (real image) -->
+    <section aria-label="Administrator Profile">
+        <img src="../images/1.jpeg" alt="Administrator profile picture">
+        <p>Administrator</p>
+    </section>
+
+</header>
+    <!-- ==========================================================
+         SIDEBAR NAVIGATION
+         Main navigation menu for the admin dashboard
+    =========================================================== -->
+    <aside>
+          <nav aria-label="Main Navigation">
+    <h2>Navigation</h2>
+    <ul>
+        <li><a href="/index.html"><i class='bx bx-grid-alt'></i>Dashboard</a></li>
+        <li><a href="/pages/student.html"><i class='bx bx-user'></i>Students</a></li>
+        <li><a href="/pages/course.html"><i class='bx bx-book'></i>Courses</a></li>
+        <li><a href="/pages/instructor.html"><i class='bx bx-chalkboard'></i>Instructors</a></li>
+        <li><a href="/pages/assignment.html"><i class='bx bx-clipboard'></i>Assignments</a></li>
+        <li><a href="/pages/exam.html"><i class='bx bx-file'></i>Exams</a></li>
+        <li><a href="/pages/certificate.html"class="active"><i class='bx bx-certification'></i>Certificates</a></li>
+        <li><a href="/pages/message.html"><i class='bx bx-envelope'></i>Messages</a></li>
+        <li><a href="/pages/report.html"><i class='bx bx-bar-chart-alt-2'></i>Reports</a></li>
+        <li><a href="/pages/settings.html"><i class='bx bx-cog'></i>Settings</a></li>
+    </ul>
+        </nav>
+    </aside>
+ <main>
+    <section aria-label="Certificates">
+
+        <h1>Certificates</h1>
+        <p>Manage and organize all certificates issued to students.</p>
+        <button type="button">Create</button>
+
+        <section aria-label="Bulk Actions">
+            <button type="button">Delete</button>
+        </section>
+
+        <section aria-label="Certificate Table">
+
+            <table>
+                <caption>List of issued student certificates</caption>
+                <thead>
+                    <tr>
+                        <th scope="col"><input type="checkbox" aria-label="Select all certificates"></th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Student Name</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Courses</th>
+                        <th scope="col">Created At</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" aria-label="Select certificate 698"></td>
+                        <td>698</td>
+                        <td>Chidera Obi</td>
+                        <td>JS COURSE CERTIFICATE</td>
+                        <td>2</td>
+                        <td><time datetime="2024-12-20T15:56">2024-12-20 15:56</time></td>
+                        <td>
+                            <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Actions for JS COURSE CERTIFICATE">&#8942;</button>
+                            <menu aria-label="Actions for JS COURSE CERTIFICATE" hidden>
+                                <li><a href="#">Edit</a></li>
+                                <li><a href="#">Delete</a></li>
+                            </menu>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" aria-label="Select certificate 697"></td>
+                        <td>697</td>
+                        <td>Tunde Bakare</td>
+                        <td>Ezycourse-Certificate</td>
+                        <td>3</td>
+                        <td><time datetime="2024-12-20T15:55">2024-12-20 15:55</time></td>
+                        <td>
+                            <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Actions for Ezycourse-Certificate">&#8942;</button>
+                            <menu aria-label="Actions for Ezycourse-Certificate" hidden>
+                                <li><a href="#">Edit</a></li>
+                                <li><a href="#">Delete</a></li>
+                            </menu>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" aria-label="Select certificate 683"></td>
+                        <td>683</td>
+                        <td>Amina Yusuf</td>
+                        <td>FULL STACK</td>
+                        <td>4</td>
+                        <td><time datetime="2024-08-26T17:56">2024-08-26 17:56</time></td>
+                        <td>
+                            <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Actions for FULL STACK">&#8942;</button>
+                            <menu aria-label="Actions for FULL STACK" hidden>
+                                <li><a href="#">Edit</a></li>
+                                <li><a href="#">Delete</a></li>
+                            </menu>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" aria-label="Select certificate 336"></td>
+                        <td>336</td>
+                        <td>Chinedu Okonkwo</td>
+                        <td>Content Marketing Course Certificate</td>
+                        <td>7</td>
+                        <td><time datetime="2023-11-18T15:36">2023-11-18 15:36</time></td>
+                        <td>
+                            <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Actions for Content Marketing Course Certificate">&#8942;</button>
+                            <menu aria-label="Actions for Content Marketing Course Certificate" hidden>
+                                <li><a href="#">Edit</a></li>
+                                <li><a href="#">Delete</a></li>
+                            </menu>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" aria-label="Select certificate 324"></td>
+                        <td>324</td>
+                        <td>Blessing Adeyemi</td>
+                        <td>JS Completion</td>
+                        <td>9</td>
+                        <td><time datetime="2024-05-18T10:30">2024-05-18 10:30</time></td>
+                        <td>
+                            <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Actions for JS Completion">&#8942;</button>
+                            <menu aria-label="Actions for JS Completion" hidden>
+                                <li><a href="#">Edit</a></li>
+                                <li><a href="#">Delete</a></li>
+                            </menu>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+           
+        </section>
+
+    </section>
+</main>
+
+    <!-- ==========================================================
+         FOOTER
+    =========================================================== -->
+    <footer>
+ 
+        <!-- Copyright -->
+        <section aria-label="Copyright">
+            <p>&copy; 2026 University Learning Management System. All rights reserved.</p>
+            <a href="accessibility.html">Accessibility Statement</a>
+        </section>
+ 
+        <!-- Quick Links -->
+        <nav aria-label="Quick Links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="reports.html">Reports</a></li>
+            </ul>
+        </nav>
+ 
+        <!-- Contact Information -->
+        <address aria-label="Contact Information">
+    <h2>Contact Information</h2>
+    <p><a href="mailto:support@example.com">support@example.com</a></p>
+    <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+    <div class="social-icons">
+        <img src="images/facebook-icon.png" alt="Facebook">
+        <img src="images/linkedin-icon.png" alt="LinkedIn">
+        <img src="images/youtube-icon.png" alt="YouTube">
+    </div>
+</address>
+ 
+        <!-- Version Information -->
+        <section aria-label="Version Information">
+            <p>Version 1.0.0</p>
+            <p>Last updated: August 12, 2026</p>
+        </section>
+ 
+    </footer>
+</body>
+</html>

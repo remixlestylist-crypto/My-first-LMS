@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students | Learning Management System</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/pages/student.css">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+</head>
+<body>
+       <!-- Sidebar toggle (mobile) -->
+<input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox">
+
+<!-- ==========================================================
+     HEADER
+     Contains the application branding and administrator profile
+=========================================================== -->
+<header>
+
+    <!-- Sidebar toggle (mobile) -->
+    <label for="sidebar-toggle" class="sidebar-toggle-label" aria-label="Toggle navigation menu">
+        <i class='bx bx-menu'></i>
+    </label>
+
+    <!-- Application logo and title (Boxicons) -->
+    <a href="/index.html" class="site-logo">
+        <i class='bx bx-book-reader'></i>
+        <h1>Learning Management System</h1>
+    </a>
+
+    <!-- Administrator profile area (real image) -->
+    <section aria-label="Administrator Profile">
+        <img src="../images/1.jpeg" alt="Administrator profile picture">
+        <p>Administrator</p>
+    </section>
+
+</header>
+
+
+    <!-- ==========================================================
+         SIDEBAR NAVIGATION
+         Shared with the Dashboard page - Students is now active
+    =========================================================== -->
+    <aside>
+         <nav aria-label="Main Navigation">
+    <h2>Navigation</h2>
+    <ul>
+        <li><a href="/index.html"><i class='bx bx-grid-alt'></i>Dashboard</a></li>
+        <li><a href="/pages/student.html" class="active"><i class='bx bx-user'></i>Students</a></li>
+        <li><a href="/pages/course.html"><i class='bx bx-book'></i>Courses</a></li>
+        <li><a href="/pages/instructor.html"><i class='bx bx-chalkboard'></i>Instructors</a></li>
+        <li><a href="/pages/assignment.html"><i class='bx bx-clipboard'></i>Assignments</a></li>
+        <li><a href="/pages/exam.html"><i class='bx bx-file'></i>Exams</a></li>
+        <li><a href="/pages/certificate.html"><i class='bx bx-certification'></i>Certificates</a></li>
+        <li><a href="/pages/message.html"><i class='bx bx-envelope'></i>Messages</a></li>
+        <li><a href="/pages/report.html"><i class='bx bx-bar-chart-alt-2'></i>Reports</a></li>
+        <li><a href="/pages/settings.html"><i class='bx bx-cog'></i>Settings</a></li>
+    </ul>
+    </nav>
+    </aside>
+
+<main>
+
+    <section aria-label="Student Management Header">
+
+        <h2>Student Management</h2>
+        <p>Welcome back, Administrator! Manage student records, monitor enrollment status, and review class assignments below.</p>
+
+        <menu class="student-actions">
+            <li>
+                <details class="export-dropdown">
+                    <summary><i class="bx bx-export"></i> Export as</summary>
+                    <ul class="export-menu">
+                        <li><a href="#">Export as CSV</a></li>
+                        <li><a href="#">Export as PDF</a></li>
+                        <li><a href="#">Export as Excel</a></li>
+                    </ul>
+                </details>
+            </li>
+            <li><button type="button"><i class="bx bx-upload"></i> Bulk Upload</button></li>
+            <li><button type="button"><i class="bx bx-user-plus"></i> Bulk Enroll</button></li>
+            <li><button type="button"><i class="bx bx-up-arrow-alt"></i> Promote Students</button></li>
+            <li><button type="button"><i class="bx bx-user-plus"></i> Add Student</button></li>
+        </menu>
+
+    </section>
+
+    <!-- ======================================================
+         (1) STUDENT STATISTICS
+    ======================================================= -->
+    <section class="student-stats" aria-label="Student Statistics">
+
+        <article class="stat-card">
+            <h3>Total Students</h3>
+            <p>All enrolled students</p>
+            <p>8</p>
+        </article>
+
+        <article class="stat-card">
+            <h3>Active</h3>
+            <p>Currently enrolled</p>
+            <p>6</p>
+        </article>
+
+        <article class="stat-card">
+            <h3>Male</h3>
+            <p>3</p>
+        </article>
+
+        <article class="stat-card">
+            <h3>Female</h3>
+            <p>5</p>
+        </article>
+
+    </section>
+
+    <!-- ======================================================
+         (3) SEARCH  &  (4) FILTER
+         UI structure only - no functionality
+    ======================================================= -->
+    <section class="student-toolbar" aria-label="Student Toolbar">
+
+        <!-- (3) Search box -->
+        <search class="student-search">
+            <label for="student-search-input">Search students</label>
+            <input type="search" id="student-search-input" name="student-search" placeholder="Search by name or admission number">
+        </search>
+
+        <!-- (4) Filter dropdown -->
+        <form class="student-filter" aria-label="Filter Students">
+            <label for="filter-class">Class</label>
+            <select id="filter-class" name="class">
+                <option value="">All Classes</option>
+                <option value="jss1">JSS 1</option>
+                <option value="jss2">JSS 2</option>
+                <option value="jss3">JSS 3</option>
+                <option value="ss1">SS 1</option>
+                <option value="ss2">SS 2</option>
+                <option value="ss3">SS 3</option>
+            </select>
+
+            <label for="filter-status">Status</label>
+            <select id="filter-status" name="status">
+                <option value="">All Statuses</option>
+                <option value="active">Active</option>
+                <option value="pending">Pending</option>
+            </select>
+        </form>
+
+    </section>
+
+    <!-- ======================================================
+     STUDENT TABLE
+====================================================== -->
+<section class="student-table-section" aria-label="Student Table">
+    <h3>Student List</h3>
+    <table class="student-table">
+        <caption>A list of all enrolled and pending students</caption>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Admission No.</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Class</th>
+                <th scope="col">Status</th>
+                <th scope="col">Email</th>
+                <th scope="col">Department</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>LMS/2026/001</td>
+                <td>
+                    <span class="student-avatar">CO</span>
+                    Chidera Obi
+                </td>
+                <td>JSS 2</td>
+                <td><span class="status-active">Active</span></td>
+                <td>chidera.obi@example.com</td>
+                <td>Science</td>
+                <td><button type="button">Actions</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>LMS/2026/002</td>
+                <td>
+                    <span class="student-avatar">TB</span>
+                    Tunde Bakare
+                </td>
+                <td>SS 1</td>
+                <td><span class="status-pending">Pending</span></td>
+                <td>tunde.bakare@example.com</td>
+                <td>Arts</td>
+                <td><button type="button">Actions</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>LMS/2026/003</td>
+                <td>
+                    <span class="student-avatar">AY</span>
+                    Amina Yusuf
+                </td>
+                <td>SS 2</td>
+                <td><span class="status-active">Active</span></td>
+                <td>amina.yusuf@example.com</td>
+                <td>Commercial</td>
+                <td><button type="button">Actions</button></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>LMS/2026/004</td>
+                <td>
+                    <span class="student-avatar">CO</span>
+                    Chinedu Okonkwo
+                </td>
+                <td>JSS 3</td>
+                <td><span class="status-active">Active</span></td>
+                <td>chinedu.okonkwo@example.com</td>
+                <td>Science</td>
+                <td><button type="button">Actions</button></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>LMS/2026/005</td>
+                <td>
+                    <span class="student-avatar">BA</span>
+                    Blessing Adeyemi
+                </td>
+                <td>SS 1</td>
+                <td><span class="status-pending">Pending</span></td>
+                <td>blessing.adeyemi@example.com</td>
+                <td>Arts</td>
+                <td><button type="button">Actions</button></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>LMS/2026/006</td>
+                <td>
+                    <span class="student-avatar">FB</span>
+                    Fatima Bello
+                </td>
+                <td>JSS 1</td>
+                <td><span class="status-active">Active</span></td>
+                <td>fatima.bello@example.com</td>
+                <td>Commercial</td>
+                <td><button type="button">Actions</button></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>LMS/2026/007</td>
+                <td>
+                    <span class="student-avatar">EO</span>
+                    Emmanuel Okafor
+                </td>
+                <td>SS 3</td>
+                <td><span class="status-active">Active</span></td>
+                <td>emmanuel.okafor@example.com</td>
+                <td>Science</td>
+                <td><button type="button">Actions</button></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>LMS/2026/008</td>
+                <td>
+                    <span class="student-avatar">GU</span>
+                    Grace Umeh
+                </td>
+                <td>JSS 2</td>
+                <td><span class="status-pending">Pending</span></td>
+                <td>grace.umeh@example.com</td>
+                <td>Arts</td>
+                <td><button type="button">Actions</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>
+
+</main>
+
+    <!-- ==========================================================
+         FOOTER
+         Shared with the Dashboard page
+    =========================================================== -->
+    <footer>
+
+        <!-- Copyright -->
+        <section aria-label="Copyright">
+            <p>&copy; 2026 University Learning Management System. All rights reserved.</p>
+            <a href="accessibility.html">Accessibility Statement</a>
+        </section>
+
+        <!-- Quick Links -->
+        <nav aria-label="Quick Links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="reports.html">Reports</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contact Information -->
+        <address aria-label="Contact Information">
+            <h2>Contact Information</h2>
+            <p><a href="mailto:support@example.com">support@example.com</a></p>
+            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+        </address>
+
+        <!-- Version Information -->
+        <section aria-label="Version Information">
+            <p>Version 1.0.0</p>
+            <p>Last updated: August 12, 2026</p>
+        </section>
+
+    </footer>
+
+</body>
+</html>

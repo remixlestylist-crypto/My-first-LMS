@@ -1,0 +1,202 @@
+/* ==========================================================
+   REPORTS PAGE HEADER
+   ========================================================== */
+section[aria-label="Reports"] {
+    padding: var(--spacing-lg);
+}
+
+section[aria-label="Reports"] > h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--color-text-heading);
+}
+
+section[aria-label="Reports"] > p {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text-body);
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ==========================================================
+   1. SUMMARY CARDS
+   4 equally sized cards using CSS Grid
+   ========================================================== */
+.report-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.report-stats .stat-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-standard);
+    box-shadow: var(--shadow-standard);
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.report-stats .stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.12);
+}
+
+.report-stats .stat-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-body);
+}
+
+.report-stats .stat-card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-primary-blue);
+}
+
+/* ==========================================================
+   2. CHARTS
+   3 equally sized chart cards
+   ========================================================== */
+section[aria-label="Charts"] {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.chart-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-standard);
+    box-shadow: var(--shadow-standard);
+    padding: var(--spacing-lg);
+}
+
+.chart-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text-heading);
+    margin-bottom: var(--spacing-md);
+}
+
+.chart-card img {
+    width: 100%;
+    border-radius: var(--radius-standard);
+    background-color: var(--color-light-gray);
+}
+
+/* ==========================================================
+   3. REPORT TABLE CONTAINER
+   ========================================================== */
+section[aria-label="Report Table"] {
+    background-color: var(--color-white);
+    border-radius: var(--radius-standard);
+    box-shadow: var(--shadow-standard);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+section[aria-label="Report Table"] table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+}
+
+section[aria-label="Report Table"] thead th {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-align: left;
+    padding: var(--spacing-md);
+}
+
+section[aria-label="Report Table"] td {
+    padding: var(--spacing-md);
+    text-align: left;
+    vertical-align: middle;
+}
+
+section[aria-label="Report Table"] tbody tr:nth-child(even) {
+    background-color: var(--color-light-gray);
+}
+
+section[aria-label="Report Table"] tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+section[aria-label="Report Table"] tbody tr:hover {
+    background-color: var(--color-very-light-blue);
+}
+
+/* ==========================================================
+   4. RECENT REPORTS
+   ========================================================== */
+section[aria-label="Recent Reports"] {
+    background-color: var(--color-white);
+    border-radius: var(--radius-standard);
+    box-shadow: var(--shadow-standard);
+    padding: var(--spacing-lg);
+}
+
+section[aria-label="Recent Reports"] h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-heading);
+    margin-bottom: var(--spacing-md);
+}
+
+section[aria-label="Recent Reports"] ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+section[aria-label="Recent Reports"] li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+section[aria-label="Recent Reports"] li:last-child {
+    border-bottom: none;
+}
+
+section[aria-label="Recent Reports"] li p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: var(--color-text-heading);
+}
+
+section[aria-label="Recent Reports"] li time {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-left: auto;
+    margin-right: var(--spacing-lg);
+}
+
+section[aria-label="Recent Reports"] li button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-standard);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-white);
+    color: var(--color-primary-blue);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+section[aria-label="Recent Reports"] li button:hover {
+    background-color: var(--color-very-light-blue);
+}

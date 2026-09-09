@@ -1,0 +1,410 @@
+/* ==========================================================
+   STUDENT MANAGEMENT HEADER
+   Card container using CSS Grid to stack its content
+=========================================================== */
+section[aria-label="Student Management Header"] {
+    display: grid;
+    gap: var(--spacing-sm);
+    background-color: var(--color-white);
+    border-radius: var(--radius-standard);
+    box-shadow: var(--shadow-standard);
+    padding: var(--spacing-lg);
+}
+
+/* ==========================================================
+   STUDENT ACTIONS - BUTTON ROW
+   Horizontal flex layout, spacing, rounded buttons, padding
+=========================================================== */
+.student-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.student-actions li {
+    display: flex;
+
+}
+.student-actions button,
+.student-actions summary {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-standard);
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    list-style: none;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-white);
+}
+
+.student-actions summary::-webkit-details-marker {
+    display: none; /* removes the marker in Chrome/Safari */
+}
+
+
+/* ==========================================================
+   STUDENT STATISTICS
+   4 equally sized cards using CSS Grid, consistent spacing.
+=========================================================== */
+.student-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+/* ==========================================================
+   STUDENT STATISTICS - CARD STYLING
+   Standard radius, generous padding, content stacked
+   vertically with consistent spacing.
+=========================================================== */
+.stat-card {
+    background-color: var(--color-light-blue);
+    border-radius: var(--radius-standard);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+
+
+/* ==========================================================
+   STUDENT STATISTICS - CARD HOVER EFFECT
+   Subtle lift + deeper shadow on hover, smooth transition
+=========================================================== */
+.stat-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-standard), 0 4px 12px rgba(30, 58, 138, 0.1);
+}
+
+
+/* ==========================================================
+   STUDENT TOOLBAR
+   Search (left), Class filter + Status filter (right),
+   aligned horizontally, spanning the main content width.
+=========================================================== */
+.student-toolbar {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+
+    margin-top: 24px;
+    margin-bottom: 32px;
+
+    padding: 20px 24px;
+
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.student-search {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.student-toolbar label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.student-search input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px 16px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    background-color: #ffffff;
+    color: #1e293b;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.student-filter {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.student-filter select {
+    min-width: 150px;
+
+    padding: 12px 16px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    background-color: #ffffff;
+    color: #1e293b;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+/* ==========================================================
+   STUDENT TABLE SECTION - CONTAINER
+   White background, rounded corners, subtle shadow,
+   generous padding, spacing above/below. Table itself
+   not styled yet.
+=========================================================== */
+.student-table-section {
+    background-color: var(--color-white);
+    border-radius: var(--radius-standard);
+    box-shadow: var(--shadow-standard);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+/* ==========================================================
+   STUDENT TABLE
+   Full width, collapsed borders, comfortable spacing,
+   aligned columns, body font. Header and status badges
+   not styled here.
+=========================================================== */
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+}
+
+.student-table td {
+    padding: 12px 16px;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 0.817em;
+}
+
+
+/* ==========================================================
+   STUDENT TABLE HEADER
+   Dark blue background, white text, heading font, bold,
+   generous padding. Table rows untouched.
+=========================================================== */
+.student-table thead th {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    padding: var(--spacing-sm) ;
+}
+
+/* ==========================================================
+   STUDENT TABLE ROWS
+   Alternating light gray background, comfortable padding,
+   vertically centered text. Status badges not styled here.
+=========================================================== */
+.student-table tbody tr:nth-child(even) {
+    background-color: var(--color-light-gray);
+}
+
+.student-table td {
+    padding: var(--spacing-md);
+    vertical-align: middle;
+}
+
+/* ==========================================================
+   STUDENT TABLE ROWS - HOVER EFFECT
+   Subtle background change on hover, smooth transition.
+   Table header untouched.
+=========================================================== */
+.student-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.student-table tbody tr:hover {
+    background-color: var(--color-very-light-blue);
+}
+
+
+/* ==========================================================
+   STUDENT TABLE - STATUS BADGES
+   Rounded pills: green for Active, orange for Pending.
+=========================================================== */
+.student-table .status-active,
+.student-table .status-pending {
+    display: inline-block;
+    border-radius: 9999px;
+    padding: 6px 14px;
+    font-weight: 700;
+}
+
+.student-table .status-active {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.student-table .status-pending {
+    background-color: #ffedd5;
+    color: #9a3412;
+}
+
+/* ==========================================================
+   STUDENT AVATAR - BASE SHAPE
+   Circular, fixed size, centered initials
+=========================================================== */
+.student-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-right: var(--spacing-sm);
+}
+
+/* ==========================================================
+   STUDENT AVATAR - COLOR VARIANTS
+   Soft background, matching darker text, per row
+=========================================================== */
+.student-table tbody tr:nth-child(1) .student-avatar {
+    background-color: #dbeafe; /* light blue */
+    color: #1e40af;
+}
+
+.student-table tbody tr:nth-child(2) .student-avatar {
+    background-color: #ede9fe; /* light purple */
+    color: #5b21b6;
+}
+
+.student-table tbody tr:nth-child(3) .student-avatar {
+    background-color: #dcfce7; /* light green */
+    color: #166534;
+}
+
+.student-table tbody tr:nth-child(4) .student-avatar {
+    background-color: #ffedd5; /* light orange */
+    color: #9a3412;
+}
+
+.student-table tbody tr:nth-child(5) .student-avatar {
+    background-color: #fce7f3; /* light pink */
+    color: #9d174d;
+}
+
+.student-table tbody tr:nth-child(6) .student-avatar {
+    background-color: #cffafe; /* light cyan */
+    color: #155e75;
+}
+
+.student-table tbody tr:nth-child(7) .student-avatar {
+    background-color: #fef9c3; /* light yellow */
+    color: #854d0e;
+}
+
+.student-table tbody tr:nth-child(8) .student-avatar {
+    background-color: #e0e7ff; /* light indigo */
+    color: #3730a3;
+}
+
+
+.student-table td:nth-child(3) {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* ==========================================================
+   RESPONSIVE - TABLET (≤1024px)
+=========================================================== */
+@media (max-width: 1024px) {
+
+    /* Student Statistics: 4 columns -> 2 columns */
+    .student-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Toolbar: search stays full width, filters wrap below if needed */
+    .student-toolbar {
+        flex-wrap: wrap;
+    }
+
+    .student-filter {
+        flex-wrap: wrap;
+    }
+
+    /* Action buttons row wraps instead of overflowing */
+    .student-actions {
+        flex-wrap: wrap;
+    }
+}
+
+/* ==========================================================
+   RESPONSIVE - MOBILE (≤640px)
+=========================================================== */
+@media (max-width: 640px) {
+
+    /* Student Statistics: 2 columns -> 1 column */
+    .student-stats {
+        grid-template-columns: 1fr;
+    }
+
+    /* Header card padding tightened */
+    section[aria-label="Student Management Header"] {
+        padding: var(--spacing-md);
+    }
+
+    /* Toolbar: stack search and filters vertically */
+    .student-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: var(--spacing-md);
+    }
+
+    .student-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .student-filter select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Student Table: horizontal scroll instead of squishing columns */
+    .student-table-section {
+        padding: var(--spacing-md);
+        overflow-x: auto;
+    }
+
+    .student-table {
+        min-width: 700px;
+    }
+
+    /* Action buttons: full width, stacked */
+    .student-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .student-actions li {
+        width: 100%;
+    }
+
+    .student-actions button,
+    .student-actions summary {
+        width: 100%;
+        justify-content: center;
+    }
+}

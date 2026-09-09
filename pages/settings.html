@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Learning Management System</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/pages/settings.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+   
+    <!-- Sidebar toggle (mobile) -->
+<input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-checkbox">
+
+<!-- ==========================================================
+     HEADER
+     Contains the application branding and administrator profile
+=========================================================== -->
+<header>
+
+    <!-- Sidebar toggle (mobile) -->
+    <label for="sidebar-toggle" class="sidebar-toggle-label" aria-label="Toggle navigation menu">
+        <i class='bx bx-menu'></i>
+    </label>
+
+    <!-- Application logo and title (Boxicons) -->
+    <a href="/index.html" class="site-logo">
+        <i class='bx bx-book-reader'></i>
+        <h1>Learning Management System</h1>
+    </a>
+
+    <!-- Administrator profile area (real image) -->
+    <section aria-label="Administrator Profile">
+        <img src="../images/1.jpeg" alt="Administrator profile picture">
+        <p>Administrator</p>
+    </section>
+
+</header>
+    <!-- ==========================================================
+         SIDEBAR NAVIGATION
+         Main navigation menu for the admin dashboard
+    =========================================================== -->
+    <aside>
+         <nav aria-label="Main Navigation">
+    <h2>Navigation</h2>
+    <ul>
+        <li><a href="/index.html"><i class='bx bx-grid-alt'></i>Dashboard</a></li>
+        <li><a href="/pages/student.html"><i class='bx bx-user'></i>Students</a></li>
+        <li><a href="/pages/course.html"><i class='bx bx-book'></i>Courses</a></li>
+        <li><a href="/pages/instructor.html"><i class='bx bx-chalkboard'></i>Instructors</a></li>
+        <li><a href="/pages/assignment.html"><i class='bx bx-clipboard'></i>Assignments</a></li>
+        <li><a href="/pages/exam.html"><i class='bx bx-file'></i>Exams</a></li>
+        <li><a href="/pages/certificate.html"><i class='bx bx-certification'></i>Certificates</a></li>
+        <li><a href="/pages/message.html"><i class='bx bx-envelope'></i>Messages</a></li>
+        <li><a href="/pages/report.html"><i class='bx bx-bar-chart-alt-2'></i>Reports</a></li>
+        <li><a href="/pages/settings.html" class="active"><i class='bx bx-cog'></i>Settings</a></li>
+    </ul>
+        </nav>
+    </aside>
+ <main>
+
+    <section aria-label="Settings">
+
+        <h1>Settings</h1>
+
+        <p>Configure the application.</p>
+
+
+        <!-- ======================================================
+             PROFILE SETTINGS
+        ======================================================= -->
+        <section aria-label="Profile Settings">
+
+            <h2><i class="bx bx-user"></i> Profile Settings</h2>
+
+            <form>
+
+                <label for="full-name">Full Name</label>
+                <input
+                    type="text"
+                    id="full-name"
+                    name="full-name"
+                    value="Administrator"
+                >
+
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value="admin@example.edu"
+                >
+
+                <button type="submit">Save Changes</button>
+
+            </form>
+
+        </section>
+
+
+        <!-- ======================================================
+             NOTIFICATION PREFERENCES
+        ======================================================= -->
+        <section aria-label="Notification Preferences">
+
+            <h2><i class="bx bx-bell"></i> Notification Preferences</h2>
+
+            <form>
+
+                <label>
+                    <input type="checkbox" name="email-notifications">
+                    Email Notifications
+                </label>
+
+                <label>
+                    <input type="checkbox" name="assignment-notifications">
+                    Assignment Notifications
+                </label>
+
+                <label>
+                    <input type="checkbox" name="exam-notifications">
+                    Exam Notifications
+                </label>
+
+                <label>
+                    <input type="checkbox" name="message-notifications">
+                    Message Notifications
+                </label>
+
+                <button type="submit">Save Preferences</button>
+
+            </form>
+
+        </section>
+
+
+        <!-- ======================================================
+             THEME OPTIONS
+        ======================================================= -->
+        <section aria-label="Theme Options">
+
+            <h2><i class="bx bx-palette"></i> Theme Options</h2>
+
+            <form>
+
+                <label for="theme">Theme</label>
+
+                <select id="theme" name="theme">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="system">System Default</option>
+                </select>
+
+            </form>
+
+        </section>
+
+
+        <!-- ======================================================
+             PASSWORD
+        ======================================================= -->
+        <section aria-label="Password">
+
+            <h2><i class="bx bx-lock-alt"></i> Password</h2>
+
+            <form>
+
+                <label for="current-password">Current Password</label>
+                <input
+                    type="password"
+                    id="current-password"
+                    name="current-password"
+                >
+
+                <label for="new-password">New Password</label>
+                <input
+                    type="password"
+                    id="new-password"
+                    name="new-password"
+                >
+
+                <label for="confirm-password">Confirm Password</label>
+                <input
+                    type="password"
+                    id="confirm-password"
+                    name="confirm-password"
+                >
+
+                <button type="submit">Change Password</button>
+
+            </form>
+
+        </section>
+
+
+        <!-- ======================================================
+             ORGANIZATION INFORMATION
+        ======================================================= -->
+        <section aria-label="Organization Information">
+
+            <h2><i class="bx bx-buildings"></i> Organization Information</h2>
+
+            <form>
+
+                <label for="organization-name">Organization Name</label>
+                <input
+                    type="text"
+                    id="organization-name"
+                    name="organization-name"
+                    value="University Learning Management System"
+                >
+
+                <label for="organization-email">Organization Email</label>
+                <input
+                    type="email"
+                    id="organization-email"
+                    name="organization-email"
+                    value="support@example.edu"
+                >
+
+                <label for="organization-phone">Organization Phone</label>
+                <input
+                    type="tel"
+                    id="organization-phone"
+                    name="organization-phone"
+                    value="+1 (555) 123-4567"
+                >
+
+                <button type="submit">Save Information</button>
+
+            </form>
+
+        </section>
+
+    </section>
+
+</main>
+
+
+
+    <!-- ==========================================================
+         FOOTER
+    =========================================================== -->
+    <footer>
+ 
+        <!-- Copyright -->
+        <section aria-label="Copyright">
+            <p>&copy; 2026 University Learning Management System. All rights reserved.</p>
+            <a href="accessibility.html">Accessibility Statement</a>
+        </section>
+ 
+        <!-- Quick Links -->
+        <nav aria-label="Quick Links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="reports.html">Reports</a></li>
+            </ul>
+        </nav>
+ 
+        <!-- Contact Information -->
+        <address aria-label="Contact Information">
+    <h2>Contact Information</h2>
+    <p><a href="mailto:support@example.com">support@example.com</a></p>
+    <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+    <div class="social-icons">
+        <img src="images/facebook-icon.png" alt="Facebook">
+        <img src="images/linkedin-icon.png" alt="LinkedIn">
+        <img src="images/youtube-icon.png" alt="YouTube">
+    </div>
+</address>
+ 
+        <!-- Version Information -->
+        <section aria-label="Version Information">
+            <p>Version 1.0.0</p>
+            <p>Last updated: August 12, 2026</p>
+        </section>
+ 
+    </footer>
+</body>
+</html>

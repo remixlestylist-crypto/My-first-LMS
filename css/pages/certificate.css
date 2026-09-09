@@ -1,0 +1,581 @@
+/* ==========================================================
+   CERTIFICATES PAGE
+=========================================================== */
+
+main {
+    background-color: #f8f9fc;
+}
+
+
+/* ==========================================================
+   CERTIFICATES MAIN SECTION
+=========================================================== */
+
+section[aria-label="Certificates"] {
+    position: relative;
+
+    padding: 32px 36px 40px;
+
+    min-height: 100%;
+}
+
+
+/* ==========================================================
+   PAGE TITLE
+=========================================================== */
+
+section[aria-label="Certificates"] > h1 {
+    margin: 0 0 6px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    color: #172033;
+}
+
+
+/* ==========================================================
+   PAGE DESCRIPTION
+=========================================================== */
+
+section[aria-label="Certificates"] > p {
+    margin: 0 0 28px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    color: #64748b;
+}
+
+
+/* ==========================================================
+   CREATE BUTTON
+=========================================================== */
+
+section[aria-label="Certificates"] > button {
+    position: absolute;
+
+    top: 36px;
+    right: 36px;
+
+    min-width: 150px;
+    height: 60px;
+
+    padding: 0 22px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #4f2df5;
+    color: #ffffff;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Create button plus symbol */
+
+section[aria-label="Certificates"] > button::before {
+    content: "+";
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 25px;
+    height: 25px;
+
+    margin-right: 10px;
+
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+
+    font-size: 21px;
+    font-weight: 300;
+
+    line-height: 1;
+}
+
+
+/* Create hover */
+
+section[aria-label="Certificates"] > button:hover {
+    background-color: #4020df;
+
+    box-shadow: 0 6px 18px rgba(79, 45, 245, 0.25);
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================
+   BULK ACTIONS
+=========================================================== */
+
+section[aria-label="Bulk Actions"] {
+    display: flex;
+    align-items: center;
+
+    min-height: 84px;
+
+    padding: 14px 8px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e1e6ef;
+    border-bottom: none;
+
+    border-radius: 10px 10px 0 0;
+}
+
+
+/* Delete button */
+
+section[aria-label="Bulk Actions"] > button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 134px;
+    height: 54px;
+
+    padding: 0 20px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #dbe1ea;
+    border-radius: 8px;
+
+    color: #ef4444;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* Delete icon */
+
+section[aria-label="Bulk Actions"] > button::before {
+    content: "♜";
+
+    margin-right: 9px;
+
+    font-size: 18px;
+
+    transform: rotate(180deg);
+}
+
+
+/* Delete hover */
+
+section[aria-label="Bulk Actions"] > button:hover {
+    background-color: #fff5f5;
+
+    border-color: #fecaca;
+}
+
+
+/* ==========================================================
+   CERTIFICATE TABLE CONTAINER
+=========================================================== */
+
+section[aria-label="Certificate Table"] {
+    overflow-x: auto;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e1e6ef;
+
+    border-radius: 0 0 10px 10px;
+
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.05);
+}
+
+
+/* ==========================================================
+   CERTIFICATE TABLE
+=========================================================== */
+
+section[aria-label="Certificate Table"] table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    background-color: #ffffff;
+}
+
+
+/* ==========================================================
+   HIDDEN CAPTION
+=========================================================== */
+
+section[aria-label="Certificate Table"] caption {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+}
+
+
+/* ==========================================================
+   TABLE HEADER
+=========================================================== */
+
+section[aria-label="Certificate Table"] thead {
+    background-color: #ffffff;
+}
+
+
+section[aria-label="Certificate Table"] th {
+    height: 74px;
+
+    padding: 0 18px;
+
+    border-top: 1px solid #e5e9f0;
+    border-bottom: 1px solid #e5e9f0;
+    border-right: 1px solid #e5e9f0;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    color: #172033;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+
+section[aria-label="Certificate Table"] th:last-child {
+    border-right: none;
+}
+
+/* ==========================================================
+   COLUMN WIDTHS
+   =========================================================== */
+
+section[aria-label="Certificate Table"] th:nth-child(1),
+section[aria-label="Certificate Table"] td:nth-child(1) {
+    width: 55px;
+
+    text-align: center;
+}
+
+
+section[aria-label="Certificate Table"] th:nth-child(2),
+section[aria-label="Certificate Table"] td:nth-child(2) {
+    width: 70px;
+}
+
+
+section[aria-label="Certificate Table"] th:nth-child(3),
+section[aria-label="Certificate Table"] td:nth-child(3) {
+    width: 150px;
+}
+
+
+section[aria-label="Certificate Table"] th:nth-child(4),
+section[aria-label="Certificate Table"] td:nth-child(4) {
+    width: 32%;
+}
+
+
+section[aria-label="Certificate Table"] th:nth-child(5),
+section[aria-label="Certificate Table"] td:nth-child(5) {
+    width: 90px;
+
+    text-align: center;
+}
+
+
+section[aria-label="Certificate Table"] th:nth-child(6),
+section[aria-label="Certificate Table"] td:nth-child(6) {
+    width: 175px;
+
+    white-space: nowrap;
+}
+
+
+section[aria-label="Certificate Table"] th:nth-child(7),
+section[aria-label="Certificate Table"] td:nth-child(7) {
+    width: 90px;
+
+    text-align: center;
+}
+
+
+/* ==========================================================
+   TABLE BODY
+   =========================================================== */
+
+section[aria-label="Certificate Table"] td {
+    height: 92px;
+
+    padding: 0 18px;
+
+    border-bottom: 1px solid #e5e9f0;
+    border-right: 1px solid #e5e9f0;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+
+    color: #172033;
+
+    vertical-align: middle;
+}
+
+
+section[aria-label="Certificate Table"] td:last-child {
+    border-right: none;
+}
+
+
+section[aria-label="Certificate Table"] tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ==========================================================
+   ROW HOVER
+   =========================================================== */
+
+section[aria-label="Certificate Table"] tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+
+section[aria-label="Certificate Table"] tbody tr:hover {
+    background-color: #fafbff;
+}
+
+
+/* ==========================================================
+   CHECKBOXES
+   =========================================================== */
+
+section[aria-label="Certificate Table"] input[type="checkbox"] {
+    width: 19px;
+    height: 19px;
+
+    margin: 0;
+
+    accent-color: #4f2df5;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================================
+   CERTIFICATE ID
+   =========================================================== */
+
+section[aria-label="Certificate Table"] td:nth-child(2) {
+    font-weight: 500;
+
+    color: #111827;
+}
+
+
+/* ==========================================================
+   STUDENT NAME
+   =========================================================== */
+
+section[aria-label="Certificate Table"] td:nth-child(3) {
+    font-weight: 600;
+
+    color: #1e293b;
+}
+
+
+/* ==========================================================
+   CERTIFICATE NAME
+   =========================================================== */
+
+section[aria-label="Certificate Table"] td:nth-child(4) {
+    font-weight: 500;
+
+    color: #172033;
+}
+
+
+/* ==========================================================
+   COURSE COUNT
+   =========================================================== */
+
+section[aria-label="Certificate Table"] td:nth-child(5) {
+    font-weight: 500;
+
+    text-align: center;
+
+    color: #172033;
+}
+
+
+/* ==========================================================
+   CREATED DATE
+   =========================================================== */
+
+section[aria-label="Certificate Table"] td:nth-child(6) {
+    color: #172033;
+
+    white-space: nowrap;
+}
+
+
+/* ==========================================================
+   ACTION BUTTON
+   =========================================================== */
+
+section[aria-label="Certificate Table"] td:nth-child(7) > button {
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    border: none;
+
+    background-color: transparent;
+
+    color: #172033;
+
+    font-size: 25px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    border-radius: 6px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+section[aria-label="Certificate Table"] td:nth-child(7) > button:hover {
+    background-color: #f1f3f8;
+
+    color: #4f2df5;
+}
+
+
+/* ==========================================================
+   ACTION MENU
+   =========================================================== */
+
+section[aria-label="Certificate Table"] td:nth-child(7) {
+    position: relative;
+}
+
+
+section[aria-label="Certificate Table"] td:nth-child(7) > menu {
+    position: absolute;
+
+    top: 58px;
+    right: 10px;
+
+    z-index: 10;
+
+    display: none;
+
+    width: 130px;
+
+    margin: 0;
+    padding: 8px;
+
+    list-style: none;
+
+    background-color: #ffffff;
+
+    border: 1px solid #dbe1ea;
+    border-radius: 8px;
+
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+
+/* Show menu when the action cell receives focus */
+
+section[aria-label="Certificate Table"] td:nth-child(7):focus-within > menu {
+    display: block;
+}
+
+
+/* ==========================================================
+   ACTION MENU ITEMS
+   =========================================================== */
+
+section[aria-label="Certificate Table"] menu li {
+    margin: 0;
+    padding: 0;
+}
+
+
+section[aria-label="Certificate Table"] menu a {
+    display: block;
+
+    padding: 11px 12px;
+
+    border-radius: 6px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #4f2df5;
+
+    text-decoration: none;
+}
+
+
+section[aria-label="Certificate Table"] menu a:hover {
+    background-color: #f5f3ff;
+}
+
+
+section[aria-label="Certificate Table"] menu li:last-child a {
+    color: #ef4444;
+}
+
+
+section[aria-label="Certificate Table"] menu li:last-child a:hover {
+    background-color: #fff5f5;
+}
